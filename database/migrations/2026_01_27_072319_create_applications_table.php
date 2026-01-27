@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('opd_id')->constrained('opds');
+            $table->foreignId('opd_id')->constrained('opds')->restrictOnDelete();
 
             // kategori: mahasiswa vs smk
             $table->enum('kategori', ['mahasiswa', 'smk']);
@@ -31,7 +31,8 @@ return new class extends Migration
             $table->date('tanggal_selesai');
 
             // status & keputusan
-            $table->string('status')->default(ApplicationStatus::DIPROSES->value);
+            $table->string('status')->default('diproses');
+            // $table->string('status')->default(ApplicationStatus::DIPROSES->value);
             $table->text('alasan_penolakan')->nullable(); // wajib saat ditolak
             $table->text('catatan_persetujuan')->nullable(); // instruksi untuk pemohon
             $table->text('catatan_admin')->nullable(); // internal
