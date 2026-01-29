@@ -68,4 +68,10 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasMany(\App\Models\Application::class);
     }
+
+    public function opd()
+    {
+        return $this->belongsTo(\App\Models\Opd::class);
+    }
+
 }

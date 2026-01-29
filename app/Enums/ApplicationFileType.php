@@ -13,4 +13,8 @@ enum ApplicationFileType: string
     // Dokumen dari admin
     case SURAT_JAWABAN_IZIN = 'surat_jawaban_izin';
     case SURAT_KETERANGAN_SELESAI = 'surat_keterangan_selesai';
+
+    case SURAT_JAWABAN = 'surat_jawaban';
+    case SURAT_SELESAI = 'surat_selesai';
+
 }

@@ -34,8 +34,15 @@ class Application extends Model
 
     public function files(): HasMany
     {
-        return $this->hasMany(ApplicationFile::class);
+        return $this->hasMany(\App\Models\ApplicationFile::class);
     }
+
+    public function fileByType(string $type)
+    {
+        // return $this->files()->where('type', $type)->first();
+        return $this->files->firstWhere('type', $type);
+    }
+
 
     // public function statusHistories(): HasMany
     // {

@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources\Applications\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
+use App\Enums\ApplicationFileType;
+use App\Enums\ApplicationStatus;
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\ViewAction;
+use Filament\Notifications\Notification;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Table;
+use Illuminate\Support\Facades\Storage;
 
 class ApplicationsTable
 {
@@ -19,10 +22,10 @@ class ApplicationsTable
             ->columns([
                 TextColumn::make('user.name')
                     ->label('Pemohon')
-                    ->numeric()
                     ->searchable()
                     ->sortable()
                     ->wrap(),
+
                 TextColumn::make('opd.nama')
                     ->label('OPD')
                     ->searchable()
@@ -57,7 +60,40 @@ class ApplicationsTable
                 TextColumn::make('status')
                     ->label('Status')
                     ->badge()
+                    ->formatStateUsing(fn (?string $state) => match ($state) {
+                        ApplicationStatus::DIPROSES->value => 'Diproses',
+                        ApplicationStatus::DISETUJUI->value => 'Disetujui',
+                        ApplicationStatus::DITOLAK->value => 'Ditolak',
+                        ApplicationStatus::SELESAI->value => 'Selesai',
+                        default => $state,
+                    })
                     ->sortable(),
+
+                TextColumn::make('surat_jawaban')
+                    ->label('Surat Jawaban')
+                    ->state(function ($record) {
+                        $file = $record->files()->where('type', ApplicationFileType::SURAT_JAWABAN_IZIN->value)->first();
+                        return $file ? 'Ada' : '-';
+                    })
+                    ->url(function ($record) {
+                        $file = $record->files()->where('type', ApplicationFileType::SURAT_JAWABAN_IZIN->value)->first();
+                        return $file?->path ? asset('storage/' . ltrim($file->path, '/')) : null;
+                    })
+                    ->openUrlInNewTab()
+                    ->badge(),
+
+                TextColumn::make('surat_selesai')
+                    ->label('Surat Selesai')
+                    ->state(function ($record) {
+                        $file = $record->files()->where('type', ApplicationFileType::SURAT_KETERANGAN_SELESAI->value)->first();
+                        return $file ? 'Ada' : '-';
+                    })
+                    ->url(function ($record) {
+                        $file = $record->files()->where('type', ApplicationFileType::SURAT_KETERANGAN_SELESAI->value)->first();
+                        return $file?->path ? asset('storage/' . ltrim($file->path, '/')) : null;
+                    })
+                    ->openUrlInNewTab()
+                    ->badge(),
 
                 TextColumn::make('created_at')
                     ->label('Diajukan')
@@ -75,10 +111,10 @@ class ApplicationsTable
                 SelectFilter::make('status')
                     ->label('Status')
                     ->options([
-                        'diproses' => 'Diproses',
-                        'disetujui' => 'Disetujui',
-                        'ditolak' => 'Ditolak',
-                        'selesai' => 'Selesai',
+                        ApplicationStatus::DIPROSES->value => 'Diproses',
+                        ApplicationStatus::DISETUJUI->value => 'Disetujui',
+                        ApplicationStatus::DITOLAK->value => 'Ditolak',
+                        ApplicationStatus::SELESAI->value => 'Selesai',
                     ]),
 
                 SelectFilter::make('kategori')
@@ -91,15 +127,71 @@ class ApplicationsTable
                 SelectFilter::make('opd_id')
                     ->label('OPD')
                     ->relationship('opd', 'nama'),
+                    
             ])
+
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
+
+                ActionGroup::make([
+                    Action::make('batalkanSuratJawaban')
+                        ->label('Batalkan Surat Jawaban')
+                        ->icon('heroicon-o-trash')
+                        ->color('danger')
+                        ->requiresConfirmation()
+                        ->visible(fn ($record): bool =>
+                            $record->files()->where('type', ApplicationFileType::SURAT_JAWABAN_IZIN->value)->exists()
+                        )
+                        ->action(function ($record): void {
+                            $file = $record->files()->where('type', ApplicationFileType::SURAT_JAWABAN_IZIN->value)->first();
+
+                            if (! $file) return;
+
+                            if ($file->path) {
+                                Storage::disk('public')->delete($file->path);
+                            }
+
+                            $file->delete();
+
+                            Notification::make()
+                                ->title('Surat jawaban dibatalkan')
+                                ->success()
+                                ->send();
+                        }),
+
+                    Action::make('batalkanSuratSelesai')
+                        ->label('Batalkan Surat Selesai')
+                        ->icon('heroicon-o-trash')
+                        ->color('danger')
+                        ->requiresConfirmation()
+                        ->visible(fn ($record): bool =>
+                            $record->files()->where('type', ApplicationFileType::SURAT_KETERANGAN_SELESAI->value)->exists()
+                        )
+                        ->action(function ($record): void {
+                            $file = $record->files()->where('type', ApplicationFileType::SURAT_KETERANGAN_SELESAI->value)->first();
+
+                            if (! $file) return;
+
+                            if ($file->path) {
+                                Storage::disk('public')->delete($file->path);
+                            }
+
+                            $file->delete();
+
+                            // kalau status sudah selesai, balikin agar konsisten
+                            if ($record->status === ApplicationStatus::SELESAI->value) {
+                                $record->update(['status' => ApplicationStatus::DISETUJUI->value]);
+                            }
+
+                            Notification::make()
+                                ->title('Surat selesai dibatalkan')
+                                ->success()
+                                ->send();
+                        }),
+                ])->label('Aksi Lainnya'),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                // Saran: disable bulk delete biar aman
             ]);
     }
 }

@@ -38,6 +38,11 @@ class OpdForm
                     ->helperText('Nomor HP / email admin OPD')
                     ->columnSpanFull(),
 
+                Textarea::make('alamat')
+                    ->label('Alamat')
+                    ->rows(3)
+                    ->columnSpanFull(),
+
                 Textarea::make('keterangan')
                     ->label('Keterangan')
                     ->rows(4)

@@ -8,16 +8,22 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Opd extends Model
 {
     protected $fillable = [
-        'nama', 'kode', 'aktif', 'kuota', 'kontak', 'keterangan',
+        'nama', 'kode', 'aktif', 'kontak', 'alamat', 'keterangan',
     ];
 
     protected $casts = [
         'aktif' => 'boolean',
-        'kuota' => 'integer',
+        // 'kuota' => 'integer',
     ];
 
     public function applications(): HasMany
     {
         return $this->hasMany(Application::class);
     }
+
+    public function users()
+    {
+        return $this->hasMany(\App\Models\User::class);
+    }
+
 }

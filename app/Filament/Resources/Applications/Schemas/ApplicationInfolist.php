@@ -4,6 +4,12 @@ namespace App\Filament\Resources\Applications\Schemas;
 
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\HtmlString;
+use Filament\Infolists\Components\Grid;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\ViewEntry;
+
 
 class ApplicationInfolist
 {
@@ -57,6 +63,50 @@ class ApplicationInfolist
                         default => $state,
                     }),
 
+                // Download Surat Jawaban (Filament v4: pakai HtmlString + ->html())
+                TextEntry::make('surat_jawaban_link')
+                    ->label('Surat Jawaban')
+                    ->state(function ($record) {
+                        $file = $record->fileByType(\App\Enums\ApplicationFileType::SURAT_JAWABAN_IZIN->value);
+
+                        if (! $file?->path) {
+                            return '-';
+                        }
+
+                        // $url = Storage::disk('public')->url($file->path);
+                        $url = asset('storage/' . ltrim($file->path, '/'));
+
+
+                        return new HtmlString(
+                            '<a href="'.$url.'" target="_blank" rel="noopener" class="underline">
+                                Download Surat Jawaban
+                            </a>'
+                        );
+                    })
+                    ->html(),
+
+                // Download Surat Selesai (Filament v4: tanpa ->url())
+                TextEntry::make('surat_selesai_link')
+                    ->label('Surat Selesai')
+                    ->state(function ($record) {
+                        $file = $record->fileByType(\App\Enums\ApplicationFileType::SURAT_SELESAI->value);
+
+                        if (! $file?->path) {
+                            return '-';
+                        }
+
+                        // $url = Storage::disk('public')->url($file->path);
+                        $url = asset('storage/' . ltrim($file->path, '/'));
+
+
+                        return new HtmlString(
+                            '<a href="'.$url.'" target="_blank" rel="noopener" class="underline">
+                                Download Surat Selesai
+                            </a>'
+                        );
+                    })
+                    ->html(),
+
                 TextEntry::make('alasan_penolakan')
                     ->label('Alasan Penolakan')
                     ->placeholder('-'),
@@ -69,7 +119,6 @@ class ApplicationInfolist
                     ->label('Catatan Admin')
                     ->placeholder('-'),
 
-                // Metadata (kalau terasa terlalu rame, kamu boleh hapus 2 entry ini)
                 TextEntry::make('created_at')
                     ->label('Diajukan')
                     ->dateTime('d M Y H:i'),

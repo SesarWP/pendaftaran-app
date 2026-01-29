@@ -39,6 +39,13 @@ class OpdsTable
                     ->toggleable(isToggledHiddenByDefault:true)
                     ->wrap(),
 
+                TextColumn::make('alamat')
+                    ->label('Alamat')
+                    ->limit(30)
+                    ->wrap()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+
                 TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->dateTime('d M Y H:i')
