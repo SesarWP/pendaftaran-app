@@ -1129,72 +1129,205 @@ textarea.input {
     padding: 8px 12px;
     font-size: 11px;
   }
+
+  .dash2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form2-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ===== FORM (PROFILE EDIT) ===== */
-.form2-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.form2-row{ margin-bottom: 12px; }
-
-.form2-label{
-  display:block;
-  font-weight: 900;
-  font-size: 12px;
-  color:#162D50;
-  margin-bottom: 6px;
-  letter-spacing: .2px;
-}
-
-.form2-input{
-  width:100%;
-  padding: 11px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 12px;
-  font-family:'Poppins', sans-serif;
+/* Enhanced Form Elements */
+.form-group select {
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color:#0f172a;
-  outline:none;
-  transition: all .2s ease;
-  background:#fff;
+  color: #162D50;
+  transition: all 0.2s ease;
 }
 
-.form2-input:focus{
-  border-color:#FF6600;
-  box-shadow: 0 0 0 3px rgba(255,102,0,.10);
+.form-group select:focus {
+  border-color: #FF6600;
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
 }
 
-.form2-help{
-  margin-top: 6px;
+/* Alert Color Variations */
+.alert-warning {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+}
+
+/* Pill Color States */
+.pill {
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 999px;
   font-size: 12px;
-  color:#64748b;
+  display: inline-block;
 }
 
-.toast-success{
-  background:#ecfdf5;
-  border:1px solid #a7f3d0;
-  color:#065f46;
-  padding: 12px 14px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  font-size: 13px;
+.pill-gray {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.pill-success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pill-warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.pill-error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Form2 Styles */
+.form2 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form2-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.form2-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.form2-section-title {
+  font-size: 14px;
   font-weight: 600;
+  color: #162D50;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
 }
 
-.toast-error{
-  background:#fef2f2;
-  border:1px solid #fecaca;
-  color:#991b1b;
-  padding: 12px 14px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  font-size: 13px;
+.form2-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-.toast-error ul{ margin:0; padding-left: 18px; }
 
-@media (max-width: 900px){
-  .form2-grid{ grid-template-columns: 1fr; }
+.form2-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #162D50;
+  font-family: 'Poppins', sans-serif;
 }
+
+.required {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.form2-input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #162D50;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+  outline: none;
+  background: #fff;
+}
+
+.form2-input:focus {
+  border-color: #FF6600;
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+}
+
+.form2-input:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+.form2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.form2-error {
+  font-size: 12px;
+  color: #ef4444;
+  font-weight: 500;
+  display: block;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary2,
+.btn-outline2 {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary2 {
+  background: #FF6600;
+  color: #fff;
+}
+
+.btn-primary2:hover {
+  background: #e55a00;
+}
+
+.btn-outline2 {
+  background: transparent;
+  color: #162D50;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-outline2:hover {
+  border-color: #FF6600;
+  color: #FF6600;
+}
+
+@media (max-width: 768px) {
+  .form2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form2-input {
+    font-size: 16px;
+  }
+
+  .btn-primary2,
+  .btn-outline2 {
+    flex: 1;
+  }
+}
+
+.pill-success { background-color: #10b981; color: white; }
+.pill-error { background-color: #ef4444; color: white; }
+.pill-warning { background-color: #f59e0b; color: white; }
+.pill-info { background-color: #3b82f6; color: white; }

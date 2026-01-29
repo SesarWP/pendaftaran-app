@@ -63,4 +63,9 @@ class User extends Authenticatable implements FilamentUser
             ? (bool) $this->is_admin
             : true;
     }
+
+    public function applications()
+    {
+        return $this->hasMany(\App\Models\Application::class);
+    }
 }
