@@ -22,7 +22,7 @@ class ApplicationFile extends Model
 
     public function application(): BelongsTo
     {
-        return $this->belongsTo(Application::class);
+        return $this->belongsTo(\App\Models\Application::class);
     }
 
     public function getUrlAttribute(): string

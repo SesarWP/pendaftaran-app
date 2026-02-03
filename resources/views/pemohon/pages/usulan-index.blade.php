@@ -69,6 +69,17 @@
                 </div>
 
                 <div class="kv-row">
+                    <span>Alamat OPD</span>
+                    <b>{{ $last?->opd?->alamat ?: '-' }}</b>
+                </div>
+
+                <div class="kv-row">
+                    <span>Kontak OPD</span>
+                    <b>{{ $last?->opd?->kontak ?: '-' }}</b>
+                </div>
+
+
+                <div class="kv-row">
                     <span>Kategori</span>
                     <b>{{ ucfirst($last->kategori) }}</b>
                 </div>

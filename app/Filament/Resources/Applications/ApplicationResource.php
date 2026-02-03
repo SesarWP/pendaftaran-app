@@ -15,6 +15,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use App\Filament\Resources\Applications\RelationManagers\FilesRelationManager;
+
 
 class ApplicationResource extends Resource
 {
@@ -48,7 +50,7 @@ class ApplicationResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            FilesRelationManager::class,
         ];
     }
 
@@ -58,7 +60,7 @@ class ApplicationResource extends Resource
             'index' => ListApplications::route('/'),
             // 'create' => CreateApplication::route('/create'),
             'view' => ViewApplication::route('/{record}'),
-            'edit' => EditApplication::route('/{record}/edit'),
+            // 'edit' => EditApplication::route('/{record}/edit'),
         ];
     }
 
@@ -67,4 +69,8 @@ class ApplicationResource extends Resource
         return false;
     }
 
+    public static function getEloquentQuery(): \Illuminate\Database\Eloquent\Builder
+    {
+        return parent::getEloquentQuery()->with(['user', 'opd', 'files']);
+    }
 }
