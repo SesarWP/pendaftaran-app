@@ -14,24 +14,39 @@
 </head>
 <body class="landing-body">
 
-  <!-- NAVBAR -->
-  <header class="nav">
+<header class="nav">
     <div class="nav-inner">
-      <div class="brand">Portal Magang</div>
-      <nav class="nav-actions">
-        <a class="btn-outline" href="{{ route('pemohon.login') }}">Masuk</a>
-        <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar</a>
-      </nav>
+
+        <a href="{{ url('/pemohon') }}" class="brand">
+            <img
+                src="{{ asset('images/hero-dashboard.png') }}"
+                alt="Portal Magang Sragen"
+            >
+        </a>
+
+        <nav class="nav-actions">
+            <a href="{{ route('pemohon.login') }}" class="btn-outline">
+                Masuk
+            </a>
+
+            <a href="{{ route('pemohon.register') }}" class="btn-primary">
+                Daftar
+            </a>
+        </nav>
+
     </div>
-  </header>
+</header>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Pendaftaran Magang Pemerintah</h1>
-      <p class="hero-subtitle">Kabupaten Sragen</p>
+    <img
+        src="{{ asset('images/pomas.png') }}"
+        alt="Portal Magang Sragen"
+        class="landing-logo"
+    >
       <p class="hero-desc">
-        Platform resmi untuk mendaftarkan diri mengikuti program magang di berbagai instansi pemerintahan Kabupaten Sragen.
+        POMAS merupakan platform digital resmi yang berfungsi sebagai sistem informasi terintegrasi untuk memfasilitasi dan mengelola seluruh rangkaian program magang di lingkungan Pemerintah Kabupaten Sragen.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar Sekarang</a>
@@ -191,7 +206,7 @@
 
         <!-- Branding -->
         <div class="footer2-col">
-            <h3 class="footer2-title">Portal Magang</h3>
+            <h3 class="footer2-title">POMAS</h3>
             <p class="footer2-desc">
                 Platform resmi pendaftaran magang Pemerintah Kabupaten Sragen.
                 Memudahkan mahasiswa dan pelajar untuk mengajukan permohonan magang secara online.
@@ -212,9 +227,10 @@
         <div class="footer2-col">
             <h4 class="footer2-heading">Kontak</h4>
             <ul class="footer2-contact">
-                <li>📍 Sragen, Jawa Tengah</li>
+                <li>📍Jl. Dr. Sutomo Nomor 10 Sragen
+Sragen 57213, Jateng, Indonesia</li>
                 <li>📧 magang@sragen.go.id</li>
-                <li>☎ (0271) 123456</li>
+                <li>☎ +62271891297</li>
             </ul>
         </div>
     </div>

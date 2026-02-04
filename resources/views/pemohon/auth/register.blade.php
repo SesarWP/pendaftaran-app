@@ -132,22 +132,28 @@
         <div class="grid-2">
           <div class="row">
             <label for="password">Password</label>
+
             <input
-              class="input @error('password') input-error @enderror"
-              type="password"
-              id="password"
-              name="password"
-              required>
-          </div>
+                class="input @error('password') input-error @enderror"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Minimal 8 karakter"
+                minlength="8"
+                required
+            >
+            </div>
+
           <div class="row">
             <label for="password_confirmation">Konfirmasi Password</label>
             <input
-              class="input @error('password_confirmation') input-error @enderror"
-              type="password"
-              id="password_confirmation"
-              name="password_confirmation"
-              required>
-          </div>
+                class="input"
+                type="password"
+                id="password_confirmation"
+                name="password_confirmation"
+                required>
+            </div>
+
         </div>
 
         <!-- Submit Button -->

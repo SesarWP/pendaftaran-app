@@ -16,38 +16,55 @@
   <!-- TOP NAV -->
   <header class="app-nav">
     <div class="app-nav-inner">
+
+      <!-- BRAND -->
       <a href="{{ route('pemohon.dashboard') }}" class="app-brand">
-        Portal Magang
+        <img src="{{ asset('images/pomas.png') }}" alt="Portal Magang Sragen">
       </a>
 
-      <nav class="app-menu">
-        <a class="app-link {{ request()->routeIs('pemohon.dashboard') ? 'active' : '' }}"
-           href="{{ route('pemohon.dashboard') }}">
-          Beranda
-        </a>
+      <!-- Toggle (Mobile) -->
+<button class="nav-toggle" type="button" id="navToggleBtn" aria-label="Buka Menu">
+  ☰
+</button>
 
-        <a class="app-link {{ request()->routeIs('pemohon.usulan.*') ? 'active' : '' }}"
-           href="{{ route('pemohon.usulan.index') }}">
-          Usulan Magang
-        </a>
+<!-- MENU -->
+<nav class="app-menu" id="appMenu">
+  <a
+    class="app-link {{ request()->routeIs('pemohon.dashboard') ? 'active' : '' }}"
+    href="{{ route('pemohon.dashboard') }}"
+  >
+    Beranda
+  </a>
 
-        <!-- Profile Dropdown -->
-        <div class="dropdown">
-          <button class="dropdown-btn" type="button" onclick="toggleDropdown()">
-            Profil
-            <span class="caret">▾</span>
-          </button>
+  <a
+    class="app-link {{ request()->routeIs('pemohon.usulan.*') ? 'active' : '' }}"
+    href="{{ route('pemohon.usulan.index') }}"
+  >
+    Usulan Magang
+  </a>
 
-          <div class="dropdown-menu" id="profileDropdown">
-            <a class="dropdown-item" href="{{ route('pemohon.profile') }}">Edit Profil</a>
+  <!-- Profile Dropdown -->
+  <div class="dropdown" id="profileDropdownWrap">
+    <button class="dropdown-btn" type="button" id="profileDropdownBtn">
+      Profil <span class="caret">▾</span>
+    </button>
 
-            <form method="POST" action="{{ route('pemohon.logout') }}">
-              @csrf
-              <button class="dropdown-item danger" type="submit">Logout</button>
-            </form>
-          </div>
-        </div>
-      </nav>
+    <div class="dropdown-menu" id="profileDropdownMenu">
+      <a class="dropdown-item" href="{{ route('pemohon.profile') }}">
+        Edit Profil
+      </a>
+
+      <form method="POST" action="{{ route('pemohon.logout') }}">
+        @csrf
+        <button class="dropdown-item danger" type="submit">
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
     </div>
   </header>
 
@@ -57,21 +74,66 @@
   </main>
 
   <script>
-    function toggleDropdown() {
-      const el = document.getElementById('profileDropdown');
-      if (!el) return;
-      el.classList.toggle('show');
+  (function () {
+    // ===== Dropdown Profil =====
+    const wrap = document.getElementById('profileDropdownWrap');
+    const btn  = document.getElementById('profileDropdownBtn');
+    const menu = document.getElementById('profileDropdownMenu');
+
+    const closeProfileMenu = () => menu && menu.classList.remove('show');
+
+    if (wrap && btn && menu) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!wrap.contains(e.target)) closeProfileMenu();
+      });
+
+      menu.addEventListener('click', function (e) {
+        const clickedLink = e.target.closest('a.dropdown-item');
+        if (clickedLink) closeProfileMenu();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeProfileMenu();
+      });
     }
 
-    // close dropdown if click outside
-    document.addEventListener('click', function(e){
-      const btn = document.querySelector('.dropdown-btn');
-      const menu = document.getElementById('profileDropdown');
-      if (!btn || !menu) return;
+    // ===== Toggle Navbar (Mobile) =====
+    const navBtn = document.getElementById('navToggleBtn');
+    const appMenu = document.getElementById('appMenu');
 
-      const isInside = e.target.closest('.dropdown');
-      if (!isInside) menu.classList.remove('show');
-    });
-  </script>
+    const closeNav = () => appMenu && appMenu.classList.remove('open');
+
+    if (navBtn && appMenu) {
+      navBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        appMenu.classList.toggle('open');
+      });
+
+      // tutup menu kalau klik di luar navbar
+      document.addEventListener('click', function (e) {
+        const navInner = document.querySelector('.app-nav-inner');
+        if (navInner && !navInner.contains(e.target)) closeNav();
+      });
+
+      // tutup menu setelah klik link
+      appMenu.addEventListener('click', function (e) {
+        const clickedLink = e.target.closest('a.app-link');
+        if (clickedLink) closeNav();
+      });
+
+      // tutup menu pakai ESC juga
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeNav();
+      });
+    }
+  })();
+</script>
+
+
 </body>
 </html>

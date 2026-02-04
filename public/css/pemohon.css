@@ -350,8 +350,15 @@ textarea.input {
 
 .hero {
   background: linear-gradient(180deg, rgba(22, 45, 80, 1) 0%, rgba(22, 45, 80, 0.85) 100%);
-  padding: 70px 20px 60px;
+  padding: 18px 20px 55px;
   color: #FFFFFF;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 18px;
+    padding-bottom: 40px;
+  }
 }
 
 .hero-inner {
@@ -557,6 +564,7 @@ textarea.input {
 }
 
 .app-nav-inner {
+    min-height: 72px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 14px 20px;
@@ -567,10 +575,10 @@ textarea.input {
 }
 
 .app-brand {
-  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 0.2px;
 }
 
 .app-menu {
@@ -604,7 +612,7 @@ textarea.input {
   padding: 18px 20px 60px;
 }
 
-/* Dropdown */
+/* ===== Dropdown (Navbar) - Rapi ===== */
 .dropdown {
   position: relative;
 }
@@ -620,6 +628,9 @@ textarea.input {
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .dropdown-btn:hover {
@@ -628,19 +639,19 @@ textarea.input {
 
 .caret {
   opacity: 0.9;
-  margin-left: 6px;
   font-size: 10px;
+  line-height: 1;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
   right: 0;
-  top: 44px;
+  top: calc(100% + 10px);
   background: #FFFFFF;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  min-width: 180px;
+  min-width: 190px;
   box-shadow: 0 12px 40px rgba(2, 6, 23, 0.15);
   overflow: hidden;
   z-index: 50;
@@ -670,9 +681,90 @@ textarea.input {
   background: #f8fafc;
 }
 
+.app-brand img {
+  display: block;
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===== Navbar Responsive (App) ===== */
+
+/* tombol hamburger default disembunyikan (desktop) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .app-nav-inner {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* menu jadi dropdown panel */
+  .app-menu {
+    display: none;            /* sembunyi default */
+    position: absolute;
+    right: 20px;
+    top: 58px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 220px;
+
+    background: #0f2a49;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 12px 40px rgba(2, 6, 23, 0.25);
+    z-index: 100;
+  }
+
+  .app-menu.open {
+    display: flex;
+  }
+
+  .app-link {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* dropdown menu profil di dalam panel (posisi jadi relative, biar gak keluar layar) */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 12px;
+    margin-top: 6px;
+  }
+}
+
 .dropdown-item.danger {
   color: #b91c1c;
 }
+
+.dropdown-item.danger:hover {
+  background: #fff1f2;
+}
+
+/* Rapihin form di dalam dropdown */
+.dropdown-menu form {
+  margin: 0;
+}
+
 
 /* Hero Section (Large) */
 .hero2 {
@@ -748,11 +840,74 @@ textarea.input {
   grid-column: 1 / 2;
 }
 
+.app-logout-form {
+  margin: 0;
+}
+
+.app-link-logout {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-link-logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
 .card2 h2 {
   color: #162D50;
   font-size: 14px;
   font-weight: 900;
   margin: 0 0 10px 0;
+}
+
+.optional {
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+
+.landing-header {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .landing-header {
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+}
+
+.landing-logo {
+max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+@media (max-width: 480px) {
+  .landing-logo {
+    max-width: 360px;
+  }
+}
+
+.landing-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.landing-subtitle {
+    font-size: 14px;
+    color: #475569;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
 .card2-head {
@@ -761,6 +916,12 @@ textarea.input {
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+.brand img {
+    height: 70px;
+    width: auto;
+    display: block;
 }
 
 .muted {
@@ -1089,10 +1250,6 @@ textarea.input {
   .btn-submit {
     padding: 12px;
     font-size: 14px;
-  }
-
-  .hero {
-    padding: 50px 20px 40px;
   }
 
   .hero h1 {
