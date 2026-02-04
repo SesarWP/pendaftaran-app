@@ -35,7 +35,7 @@
     $fileLink = function ($file) {
         if (!$file) return '-';
 
-        $download = '<a href="'.route('pemohon.usulan.file.download', $file->id).'" style="margin-left:10px;">Download</a>';
+        $download = '<a href="'.route('pemohon.usulan.file.download', $file).'" style="margin-left:10px;">Download</a>';
 
         return $download;
     };
@@ -100,16 +100,16 @@
                     <b>{!! $fileLink($doc($last, ApplicationFileType::SURAT_PENGANTAR)) !!}</b>
                 </div>
                 <div class="kv-row">
+                    <span>Transkrip/Rapor</span>
+                    <b>{!! $fileLink($doc($last, ApplicationFileType::TRANSKRIP_RAPOR)) !!}</b>
+                </div>
+                <div class="kv-row">
                     <span>Proposal</span>
                     <b>{!! $fileLink($doc($last, ApplicationFileType::PROPOSAL)) !!}</b>
                 </div>
                 <div class="kv-row">
                     <span>CV</span>
                     <b>{!! $fileLink($doc($last, ApplicationFileType::CV)) !!}</b>
-                </div>
-                <div class="kv-row">
-                    <span>Transkrip/Rapor</span>
-                    <b>{!! $fileLink($doc($last, ApplicationFileType::TRANSKRIP_RAPOR)) !!}</b>
                 </div>
 
                 {{-- Dokumen admin (kalau sudah ada) --}}
@@ -156,7 +156,7 @@
         @if($bolehAjukan)
             <form method="POST" action="{{ route('pemohon.usulan.store') }}" enctype="multipart/form-data" class="form2">
                 @csrf
-                
+
                 <div class="form2-section">
                     <h3 class="form2-section-title">Informasi OPD & Kategori</h3>
 
@@ -179,17 +179,23 @@
                             class="form2-input"
                             value="{{ strtoupper($user->pemohon_tipe) }}"
                             readonly>
-                        <small class="muted">
-                            Kategori mengikuti tipe akun di profil. Jika salah, silakan update profil.
-                        </small>
                     </div>
 
                     <div class="form2-row">
-                        <label class="form2-label">Institusi <span class="required">*</span></label>
-                        <input type="text" name="institusi" value="{{ old('institusi') }}" class="form2-input" placeholder="Nama kampus/sekolah" required>
+                        <label class="form2-label">Institusi</label>
+
+                        <input
+                            type="text"
+                            class="form2-input"
+                            value="{{ $user->instansi_nama ?? '' }}"
+                            readonly
+                        >
+
+                        <input type="hidden" name="institusi" value="{{ $user->instansi_nama ?? '' }}">
+
                         @error('institusi') <small class="form2-error">{{ $message }}</small> @enderror
                     </div>
-                </div>
+
 
                 <div class="form2-section">
                     <h3 class="form2-section-title">Informasi Kontak</h3>
@@ -197,15 +203,35 @@
                     <div class="form2-grid">
                         <div class="form2-row">
                             <label class="form2-label">Jurusan</label>
-                            <input type="text" name="jurusan" value="{{ old('jurusan') }}" class="form2-input" placeholder="Program studi/jurusan">
+
+                            <input
+                                type="text"
+                                class="form2-input"
+                                value="{{ $user->jurusan ?? '' }}"
+                                readonly
+                            >
+
+                            <input type="hidden" name="jurusan" value="{{ $user->jurusan ?? '' }}">
+
                             @error('jurusan') <small class="form2-error">{{ $message }}</small> @enderror
                         </div>
 
+
                         <div class="form2-row">
                             <label class="form2-label">Telepon</label>
-                            <input type="text" name="telepon" value="{{ old('telepon') }}" class="form2-input" placeholder="Nomor telepon">
+
+                            <input
+                                type="text"
+                                class="form2-input"
+                                value="{{ $user->no_hp ?? '' }}"
+                                readonly
+                            >
+
+                            <input type="hidden" name="telepon" value="{{ $user->no_hp ?? '' }}">
+
                             @error('telepon') <small class="form2-error">{{ $message }}</small> @enderror
                         </div>
+
                     </div>
                 </div>
 
@@ -238,22 +264,45 @@
                     </div>
 
                     <div class="form2-row">
-                        <label class="form2-label">Proposal (PDF) <span class="required">*</span></label>
-                        <input type="file" name="proposal" class="form2-input" required accept=".pdf,application/pdf">
-                        @error('proposal') <small class="form2-error">{{ $message }}</small> @enderror
-                    </div>
-
-                    <div class="form2-row">
-                        <label class="form2-label">CV (PDF) <span class="required">*</span></label>
-                        <input type="file" name="cv" class="form2-input" required accept=".pdf,application/pdf">
-                        @error('cv') <small class="form2-error">{{ $message }}</small> @enderror
-                    </div>
-
-                    <div class="form2-row">
                         <label class="form2-label">Transkrip / Rapor (PDF/JPG/PNG) <span class="required">*</span></label>
                         <input type="file" name="transkrip_rapor" class="form2-input" required accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/*">
                         @error('transkrip_rapor') <small class="form2-error">{{ $message }}</small> @enderror
                     </div>
+
+                    <div class="form2-row">
+                        <label class="form2-label">
+                            Proposal (PDF) <span class="optional">(Opsional)</span>
+                        </label>
+
+                        <input
+                            type="file"
+                            name="proposal"
+                            class="form2-input"
+                            accept=".pdf,application/pdf"
+                        >
+
+                        @error('proposal')
+                            <small class="form2-error">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form2-row">
+                        <label class="form2-label">
+                            CV (PDF) <span class="optional">(Opsional)</span>
+                        </label>
+
+                        <input
+                            type="file"
+                            name="cv"
+                            class="form2-input"
+                            accept=".pdf,application/pdf"
+                        >
+
+                        @error('cv')
+                            <small class="form2-error">{{ $message }}</small>
+                        @enderror
+                    </div>
+
 
                     <small class="muted">
                         Maks ukuran: 4MB per file.

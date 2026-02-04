@@ -26,7 +26,7 @@ class UsulanMagangController extends Controller
             ApplicationStatus::DITOLAK->value,
             ApplicationStatus::SELESAI->value,
         ], true);
-            }
+    }
 
     public function index(Request $request)
     {
@@ -53,9 +53,11 @@ class UsulanMagangController extends Controller
             ->first();
 
         if (!$this->bolehAjukan($last)) {
+            $lastStatus = is_object($last->status) ? $last->status->value : (string) $last->status;
+
             return back()->with(
                 'error',
-                'Anda belum bisa mengajukan usulan baru karena status usulan terakhir masih: ' . strtoupper($last->status)
+                'Anda belum bisa mengajukan usulan baru karena status usulan terakhir masih: ' . strtoupper($lastStatus)
             );
         }
 
@@ -67,18 +69,22 @@ class UsulanMagangController extends Controller
             'tanggal_mulai' => ['required', 'date'],
             'tanggal_selesai' => ['required', 'date', 'after_or_equal:tanggal_mulai'],
 
-            // WAJIB SEMUA FILE
+            // FILE WAJIB
             'surat_pengantar' => ['required', 'file', 'mimes:pdf', 'max:4096'],
-            'proposal'        => ['required', 'file', 'mimes:pdf', 'max:4096'],
-            'cv'              => ['required', 'file', 'mimes:pdf', 'max:4096'],
             'transkrip_rapor' => ['required', 'file', 'mimes:pdf,jpg,jpeg,png', 'max:4096'],
+
+            // FILE OPSIONAL
+            'cv'       => ['nullable', 'file', 'mimes:pdf', 'max:4096'],
+            'proposal' => ['nullable', 'file', 'mimes:pdf', 'max:4096'],
         ]);
 
         return DB::transaction(function () use ($user, $request, $validated) {
+
             // derive kategori from user's profile field 'pemohon_tipe'
-            $kategori = $user->pemohon_tipe; // nilai: 'mahasiswa' atau 'smk'
+            $kategori = $user->pemohon_tipe; // 'mahasiswa' atau 'smk'
             if (!in_array($kategori, ['mahasiswa', 'smk'], true)) {
-                return back()->with('error', 'Tipe akun tidak valid. Silakan update profil dulu.');}
+                return back()->with('error', 'Tipe akun tidak valid. Silakan update profil dulu.');
+            }
 
             $app = Application::create([
                 'user_id' => $user->id,
@@ -92,10 +98,15 @@ class UsulanMagangController extends Controller
                 'status' => ApplicationStatus::DIPROSES->value,
             ]);
 
-            $saveRequiredFile = function (string $inputName, ApplicationFileType $type) use ($request, $app) {
+            // ✅ Upload file: wajib & opsional (cek dulu ada file atau nggak)
+            $saveFileIfExists = function (string $inputName, ApplicationFileType $type) use ($request, $app) {
+
+                if (!$request->hasFile($inputName)) {
+                    return; // kalau opsional dan tidak diupload, skip
+                }
+
                 $file = $request->file($inputName);
 
-                // unique(application_id, type) => kalau ada, replace
                 $old = $app->files()->where('type', $type->value)->first();
 
                 $path = $file->store("applications/{$app->id}", 'public');
@@ -114,13 +125,16 @@ class UsulanMagangController extends Controller
                 }
             };
 
-            $saveRequiredFile('surat_pengantar', ApplicationFileType::SURAT_PENGANTAR);
-            $saveRequiredFile('proposal', ApplicationFileType::PROPOSAL);
-            $saveRequiredFile('cv', ApplicationFileType::CV);
-            $saveRequiredFile('transkrip_rapor', ApplicationFileType::TRANSKRIP_RAPOR);
+            // WAJIB (pasti ada karena validasi required)
+            $saveFileIfExists('surat_pengantar', ApplicationFileType::SURAT_PENGANTAR);
+            $saveFileIfExists('transkrip_rapor', ApplicationFileType::TRANSKRIP_RAPOR);
+
+            // OPSIONAL
+            $saveFileIfExists('proposal', ApplicationFileType::PROPOSAL);
+            $saveFileIfExists('cv', ApplicationFileType::CV);
 
             return redirect()->route('pemohon.usulan.index')
-                ->with('success', 'Usulan magang berhasil dikirim beserta berkas. Silakan tunggu verifikasi.');
+                ->with('success', 'Usulan magang berhasil dikirim. Silakan tunggu verifikasi.');
         });
     }
 }

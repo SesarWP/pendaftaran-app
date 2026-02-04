@@ -30,9 +30,12 @@
 
     <div class="hero2" style="margin-top: 14px;">
         <div class="hero2-inner">
+            <div class="hero2-right">
+                <img class="hero2-img" src="{{ asset('images/hero-dashboard.png') }}" alt="Hero Dashboard">
+            </div>
             <div>
                 <h2 class="hero2-title">Halo, {{ $user->name }}</h2>
-                <p class="hero2-subtitle">Selamat datang di sistem pengajuan magang</p>
+                <p class="hero2-subtitle">Selamat datang di Portal Magang Sragen</p>
                 <p class="hero2-desc">
                     @if(!$last)
                         Mulai proses pengajuan magang Anda sekarang untuk mendapatkan pengalaman praktik di berbagai organisasi.
@@ -40,10 +43,6 @@
                         Pantau status pengajuan magang Anda dan kelola dokumen-dokumen penting untuk kesuksesan praktik Anda.
                     @endif
                 </p>
-            </div>
-
-            <div class="hero2-right">
-                <img class="hero2-img" src="{{ asset('images/hero-dashboard.png') }}" alt="Hero Dashboard">
             </div>
         </div>
     </div>
