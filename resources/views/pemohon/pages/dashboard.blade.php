@@ -26,7 +26,7 @@
 @endphp
 
 <div class="app-main">
-    <h1 class="page-title">Beranda</h1>
+    <h1 class="page-title">POMAS</h1>
 
     <div class="hero2" style="margin-top: 14px;">
         <div class="hero2-inner">
@@ -97,7 +97,7 @@
 
                 <ul class="info-list">
                     <li><b>Email:</b> {{ $user->email }}</li>
-                    <li><b>Tipe:</b> {{ ucfirst($user->pemohon_tipe) }}</li>
+                    <li><b>Kategori:</b> {{ ucfirst($user->pemohon_tipe) }}</li>
                     <li><b>Akun Dibuat:</b> {{ $user->created_at->format('d M Y') }}</li>
                 </ul>
 

@@ -28,7 +28,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->unique(['application_id', 'type']); // 1 jenis dokumen per permohonan (bisa kamu ubah kalau butuh multi)
+            $table->unique(['application_id', 'type']);
         });
     }
 

@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Magang - Kabupaten Sragen</title>
+  <title>POMAS</title>
+  <link rel="icon" href="{{ asset('images/favicon.png') }}?v=5">
+<link rel="shortcut icon" href="{{ asset('images/favicon.png') }}?v=5">
   <meta name="description" content="Platform resmi untuk mendaftarkan diri mengikuti program magang di berbagai instansi pemerintahan Kabupaten Sragen.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +18,6 @@
 
 <header class="nav">
     <div class="nav-inner">
-
         <a href="{{ url('/pemohon') }}" class="brand">
             <img
                 src="{{ asset('images/hero-dashboard.png') }}"
@@ -82,7 +83,7 @@
       <text x="910" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">5</text>
     </svg>
 
-    <!-- Desktop: Cards 5 kolom -->
+    <!-- Desktop: Cards -->
     <div class="flow-grid-desktop">
       <div class="flow-item">
         <div class="flow-title">Daftar Akun</div>
