@@ -1,10 +1,10 @@
 @extends('pemohon.layouts.app')
 
-@section('title', 'Profil - Portal Magang')
+@section('title', 'POMAS')
 
 @section('content')
   <section class="page">
-    <h1 class="page-title">Edit Profil</h1>
+    <h1 class="page-title">POMAS</h1>
     <p class="page-desc">Pastikan data Anda benar agar proses pengajuan magang lancar.</p>
 
     @if (session('success'))

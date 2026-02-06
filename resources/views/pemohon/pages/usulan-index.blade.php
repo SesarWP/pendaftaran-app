@@ -25,7 +25,6 @@
         };
     };
 
-    // ===== Helpers dokumen (butuh $last->load('files') di controller) =====
     $doc = function ($app, ApplicationFileType $type) {
         if (!$app) return null;
         if (!$app->relationLoaded('files')) return null;
@@ -42,7 +41,7 @@
 @endphp
 
 <div class="app-main">
-    <h1 class="page-title">Usulan Magang</h1>
+    <h1 class="page-title">POMAS</h1>
     <p class="page-desc">Kelola pengajuan magang Anda dan pantau status permohonan</p>
 
     @if(session('success'))

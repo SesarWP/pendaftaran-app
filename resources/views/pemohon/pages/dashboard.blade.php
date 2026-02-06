@@ -26,7 +26,7 @@
 @endphp
 
 <div class="app-main">
-    <h1 class="page-title">Beranda</h1>
+    <h1 class="page-title">POMAS</h1>
 
     <div class="hero2" style="margin-top: 14px;">
         <div class="hero2-inner">

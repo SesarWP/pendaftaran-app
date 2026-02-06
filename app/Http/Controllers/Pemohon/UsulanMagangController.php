@@ -98,7 +98,7 @@ class UsulanMagangController extends Controller
                 'status' => ApplicationStatus::DIPROSES->value,
             ]);
 
-            // ✅ Upload file: wajib & opsional (cek dulu ada file atau nggak)
+            // Upload file: wajib & opsional (cek dulu ada file atau nggak)
             $saveFileIfExists = function (string $inputName, ApplicationFileType $type) use ($request, $app) {
 
                 if (!$request->hasFile($inputName)) {

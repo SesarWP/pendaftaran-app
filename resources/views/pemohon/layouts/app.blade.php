@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title', 'Portal Magang')</title>
+  <title>@yield('title', 'POMAS')</title>
   <link rel="icon" href="{{ asset('images/favicon.png') }}?v=3">
   <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}?v=3">
   <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}?v=3">
@@ -19,8 +19,6 @@
   <!-- TOP NAV -->
   <header class="app-nav">
     <div class="app-nav-inner">
-
-      <!-- BRAND -->
       <a href="{{ route('pemohon.dashboard') }}" class="app-brand">
         <img src="{{ asset('images/pomas.png') }}" alt="Portal Magang Sragen">
       </a>

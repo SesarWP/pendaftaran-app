@@ -1,13 +1,13 @@
 @extends('pemohon.layouts.app')
 
-@section('title', 'Beranda - Portal Magang')
+@section('title', 'Beranda - POMAS')
 
 @section('content')
   <!-- HERO -->
   <section class="hero2">
     <div class="hero2-inner">
       <div class="hero2-left">
-        <h1 class="hero2-title">Dashboard Pemohon Magang</h1>
+        <h1 class="hero2-title">POMAS</h1>
         <p class="hero2-subtitle">Kabupaten Sragen</p>
         <p class="hero2-desc">
           Pantau status usulan magang Anda, lengkapi data, dan unggah berkas dengan mudah.

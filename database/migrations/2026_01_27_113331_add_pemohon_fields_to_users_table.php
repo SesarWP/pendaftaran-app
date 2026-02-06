@@ -8,13 +8,13 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('pemohon_tipe')->nullable()->index(); // smk|mahasiswa
+            $table->string('pemohon_tipe')->nullable()->index();
             $table->string('no_hp')->nullable();
             $table->text('alamat')->nullable();
 
-            $table->string('instansi_nama')->nullable(); // sekolah/kampus
+            $table->string('instansi_nama')->nullable();
             $table->string('jurusan')->nullable();
-            $table->string('nomor_induk')->nullable(); // NISN/NIM
+            $table->string('nomor_induk')->nullable();
         });
     }
 
