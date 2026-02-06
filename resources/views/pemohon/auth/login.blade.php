@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Pemohon</title>
-
+  <title>POMASn</title>
+<link rel="icon" href="{{ asset('images/favicon.png') }}?v=5">
+<link rel="shortcut icon" href="{{ asset('images/favicon.png') }}?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,6 +61,8 @@
       <div style="margin-top: 24px; text-align: center; font-size: 13px; color: #64748b;">
         Belum punya akun?
         <a href="{{ route('pemohon.register') }}" class="link">Daftar di sini</a>
+        <br>
+         <!--<a href="{{ route('pemohon.password.request') }}" class="link" style="margin-top:8px; display:inline-block;">Lupa password?</a>-->
       </div>
     </div>
   </div>

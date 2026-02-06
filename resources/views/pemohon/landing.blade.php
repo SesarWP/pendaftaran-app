@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Magang - Kabupaten Sragen</title>
+  <title>POMAS</title>
+  <link rel="icon" href="{{ asset('images/favicon.png') }}?v=5">
+<link rel="shortcut icon" href="{{ asset('images/favicon.png') }}?v=5">
   <meta name="description" content="Platform resmi untuk mendaftarkan diri mengikuti program magang di berbagai instansi pemerintahan Kabupaten Sragen.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,24 +16,38 @@
 </head>
 <body class="landing-body">
 
-  <!-- NAVBAR -->
-  <header class="nav">
+<header class="nav">
     <div class="nav-inner">
-      <div class="brand">Portal Magang</div>
-      <nav class="nav-actions">
-        <a class="btn-outline" href="{{ route('pemohon.login') }}">Masuk</a>
-        <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar</a>
-      </nav>
+        <a href="{{ url('/pemohon') }}" class="brand">
+            <img
+                src="{{ asset('images/hero-dashboard.png') }}"
+                alt="Portal Magang Sragen"
+            >
+        </a>
+
+        <nav class="nav-actions">
+            <a href="{{ route('pemohon.login') }}" class="btn-outline">
+                Masuk
+            </a>
+
+            <a href="{{ route('pemohon.register') }}" class="btn-primary">
+                Daftar
+            </a>
+        </nav>
+
     </div>
-  </header>
+</header>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Pendaftaran Magang Pemerintah</h1>
-      <p class="hero-subtitle">Kabupaten Sragen</p>
+    <img
+        src="{{ asset('images/pomas.png') }}"
+        alt="Portal Magang Sragen"
+        class="landing-logo"
+    >
       <p class="hero-desc">
-        Platform resmi untuk mendaftarkan diri mengikuti program magang di berbagai instansi pemerintahan Kabupaten Sragen.
+        POMAS merupakan platform digital resmi yang berfungsi sebagai sistem informasi terintegrasi untuk memfasilitasi dan mengelola seluruh rangkaian program magang di lingkungan Pemerintah Kabupaten Sragen.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar Sekarang</a>
@@ -67,7 +83,7 @@
       <text x="910" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">5</text>
     </svg>
 
-    <!-- Desktop: Cards 5 kolom -->
+    <!-- Desktop: Cards -->
     <div class="flow-grid-desktop">
       <div class="flow-item">
         <div class="flow-title">Daftar Akun</div>
@@ -185,6 +201,47 @@
       <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar Sekarang</a>
     </div>
   </section>
+
+  <footer class="footer2">
+    <div class="footer2-inner">
+
+        <!-- Branding -->
+        <div class="footer2-col">
+            <h3 class="footer2-title">POMAS</h3>
+            <p class="footer2-desc">
+                Platform resmi pendaftaran magang Pemerintah Kabupaten Sragen.
+                Memudahkan mahasiswa dan pelajar untuk mengajukan permohonan magang secara online.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer2-col">
+            <h4 class="footer2-heading">Menu</h4>
+            <ul class="footer2-links">
+                <li><a href="{{ route('pemohon.home') }}">Beranda</a></li>
+                <li><a href="{{ route('pemohon.login') }}">Masuk</a></li>
+                <li><a href="{{ route('pemohon.register') }}">Daftar</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer2-col">
+            <h4 class="footer2-heading">Kontak</h4>
+            <ul class="footer2-contact">
+                <li>📍Jl. Dr. Sutomo Nomor 10 Sragen
+Sragen 57213, Jateng, Indonesia</li>
+                <li>📧 magang@sragen.go.id</li>
+                <li>☎ +62271891297</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer2-bottom">
+        <p>
+            © {{ date('Y') }} Portal Magang Kabupaten Sragen. All rights reserved.
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>

@@ -1,13 +1,13 @@
 @extends('pemohon.layouts.app')
 
-@section('title', 'Beranda - Portal Magang')
+@section('title', 'Beranda - POMAS')
 
 @section('content')
   <!-- HERO -->
   <section class="hero2">
     <div class="hero2-inner">
       <div class="hero2-left">
-        <h1 class="hero2-title">Dashboard Pemohon Magang</h1>
+        <h1 class="hero2-title">POMAS</h1>
         <p class="hero2-subtitle">Kabupaten Sragen</p>
         <p class="hero2-desc">
           Pantau status usulan magang Anda, lengkapi data, dan unggah berkas dengan mudah.
@@ -15,7 +15,6 @@
       </div>
 
       <div class="hero2-right">
-        <!-- GANTI GAMBAR INI SESUAI PUNYA KAMU -->
         <img class="hero2-img" src="{{ asset('images/hero-dashboard.png') }}" alt="Hero Dashboard">
       </div>
     </div>
@@ -83,7 +82,7 @@
         <h2>Informasi Penting</h2>
         <ul class="info-list">
           <li>Pengajuan magang diproses setelah data & berkas lengkap.</li>
-          <li>Selama status <b>Menunggu/Diterima</b>, Anda tidak dapat membuat usulan baru.</li>
+          <li>Selama status <b>Diproses</b> atau <b>Diterima</b>, Anda tidak dapat membuat usulan baru.</li>
           <li>Jika <b>Ditolak</b> atau <b>Selesai</b>, Anda dapat mengajukan kembali.</li>
         </ul>
       </div>
