@@ -1,48 +1,45 @@
 # Portal Magang Sragen (POMAS)
 
-Sistem **Pendaftaran & Pengajuan Magang Pemerintah Kabupaten Sragen** berbasis web.
+**Portal Magang Sragen (POMAS)** adalah aplikasi web untuk mengelola **pendaftaran dan pengajuan magang** di lingkungan **Pemerintah Kabupaten Sragen**.
 
-Aplikasi ini dibangun menggunakan **Laravel 12** dengan pemisahan yang jelas antara **Pemohon** (frontend publik) dan **Admin** (Filament).
+Aplikasi ini ditujukan bagi **siswa SMK dan mahasiswa** sebagai pemohon magang, serta **admin OPD** untuk melakukan verifikasi, persetujuan, dan pengelolaan dokumen magang secara terpusat dan digital.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Fitur
 
 ### Pemohon (SMK / Mahasiswa)
-
-* Registrasi & Login Pemohon
-* Manajemen Profil Pemohon
-* Pengajuan Usulan Magang (1 aktif, terkunci sesuai status)
-* Upload & Download Dokumen Magang
-* Tracking Status Pengajuan (Diproses / Disetujui / Ditolak / Selesai)
+- Registrasi & Login
+- Manajemen Profil
+- Pengajuan Usulan Magang (maks. 1 aktif)
+- Upload & Download Dokumen
+- Monitoring Status: Diproses, Disetujui, Ditolak, Selesai
 
 ### Admin
-
-* Admin Panel menggunakan **Filament v4**
-* Manajemen OPD
-* Verifikasi & Persetujuan Usulan Magang
-* Upload Dokumen Balasan
+- Admin Panel menggunakan **Filament v4**
+- Manajemen OPD
+- Verifikasi & Persetujuan Pengajuan
+- Upload Dokumen Balasan
 
 ---
 
 ## 🧱 Teknologi
 
-* **Backend**: Laravel 12 (PHP 8.3)
-* **Frontend**: Blade (tanpa Tailwind, tanpa Vite)
-* **Styling**: CSS (`public/css/pemohon.css`)
-* **Database**: MySQL
-* **Admin Panel**: Filament v4
-* **Environment**: Laragon (recommended)
+- **Backend**: Laravel 12 (PHP 8.3)
+- **Frontend**: Blade Template
+- **Styling**: CSS manual
+- **Database**: MySQL
+- **Admin Panel**: Filament v4
+- **Environment**: Laragon (disarankan)
 
 ---
 
-## ⚙️ Cara Setup Project
+## ⚙️ Setup & Menjalankan Aplikasi
 
-### 1️⃣ Clone Repository
-
+1. Clone repository:
 ```bash
-git clone https://github.com/username/portal-magang-sragen.git
-cd portal-magang-sragen
+git clone https://github.com/ranamalia/pendaftaran-app.git
+cd pendaftaran-app
 ```
 
 ---
@@ -147,13 +144,6 @@ http://127.0.0.1:8000
 
 * Surat Jawaban Izin
 * Surat Keterangan Selesai
-
-Semua file disimpan di:
-
-```
-storage/app/public/applications/
-```
----
 
 ## 👩‍💻 Developer
 
