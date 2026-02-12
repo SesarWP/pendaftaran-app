@@ -87,23 +87,28 @@
     <div class="flow-grid-desktop">
       <div class="flow-item">
         <div class="flow-title">Daftar Akun</div>
-        <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun.</div>
+        <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
+        <span class="flow-time">⏱ 3-5 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Lengkapi Profil</div>
-        <div class="flow-text">Isi data instansi, jurusan/prodi, dan kontak.</div>
+        <div class="flow-text">Isi data instansi, jurusan/prodi, nomor induk (NISN/NIM), dan kontak yang dapat dihubungi.</div>
+        <span class="flow-time">⏱ 5 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Ajukan Magang</div>
-        <div class="flow-text">Pilih instansi tujuan dan periode magang.</div>
+        <div class="flow-text">Pilih OPD tujuan dan tentukan periode magang sesuai jadwal akademik Anda.</div>
+        <span class="flow-time">⏱ 2-3 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Upload Berkas</div>
-        <div class="flow-text">Unggah surat, CV, dan dokumen pendukung.</div>
+        <div class="flow-text">Unggah surat pengantar, transkrip/rapor (wajib), serta CV dan proposal (opsional). Maks 4MB per file.</div>
+        <span class="flow-time">⏱ 5-10 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Pantau Status</div>
-        <div class="flow-text">Lihat status: menunggu/diterima/ditolak.</div>
+        <div class="flow-text">Pantau status pengajuan Anda: Diproses, Disetujui, Ditolak, atau Selesai.</div>
+        <span class="flow-time">⏱ 1-3 hari kerja</span>
       </div>
     </div>
 
@@ -116,7 +121,8 @@
         </div>
         <div class="flow-item">
           <div class="flow-title">Daftar Akun</div>
-          <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun.</div>
+          <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
+          <span class="flow-time">⏱ 3-5 menit</span>
         </div>
       </div>
 
@@ -127,7 +133,8 @@
         </div>
         <div class="flow-item">
           <div class="flow-title">Lengkapi Profil</div>
-          <div class="flow-text">Isi data instansi, jurusan/prodi, dan kontak.</div>
+          <div class="flow-text">Isi data instansi, jurusan/prodi, nomor induk (NISN/NIM), dan kontak yang dapat dihubungi.</div>
+          <span class="flow-time">⏱ 5 menit</span>
         </div>
       </div>
 
@@ -138,7 +145,8 @@
         </div>
         <div class="flow-item">
           <div class="flow-title">Ajukan Magang</div>
-          <div class="flow-text">Pilih instansi tujuan dan periode magang.</div>
+          <div class="flow-text">Pilih OPD tujuan dan tentukan periode magang sesuai jadwal akademik Anda.</div>
+          <span class="flow-time">⏱ 2-3 menit</span>
         </div>
       </div>
 
@@ -149,7 +157,8 @@
         </div>
         <div class="flow-item">
           <div class="flow-title">Upload Berkas</div>
-          <div class="flow-text">Unggah surat, CV, dan dokumen pendukung.</div>
+          <div class="flow-text">Unggah surat pengantar, transkrip/rapor (wajib), serta CV dan proposal (opsional). Maks 4MB per file.</div>
+          <span class="flow-time">⏱ 5-10 menit</span>
         </div>
       </div>
 
@@ -159,7 +168,8 @@
         </div>
         <div class="flow-item">
           <div class="flow-title">Pantau Status</div>
-          <div class="flow-text">Lihat status: menunggu/diterima/ditolak.</div>
+          <div class="flow-text">Pantau status pengajuan Anda: Diproses, Disetujui, Ditolak, atau Selesai.</div>
+          <span class="flow-time">⏱ 1-3 hari kerja</span>
         </div>
       </div>
     </div>
@@ -174,21 +184,115 @@
       <div class="req-card">
         <h3>Untuk SMK</h3>
         <ul>
-          <li>NISN yang terdaftar</li>
-          <li>Surat rekomendasi dari sekolah</li>
-          <li>CV yang terstruktur</li>
-          <li>Surat lamaran</li>
+          <li>NISN yang terdaftar dan valid</li>
+          <li>Surat pengantar dari sekolah (PDF, maks 4MB)</li>
+          <li>Transkrip nilai/rapor (PDF/JPG/PNG, maks 4MB)</li>
+          <li>CV yang terstruktur (PDF, opsional)</li>
+          <li>Proposal kegiatan (PDF, opsional)</li>
         </ul>
       </div>
 
       <div class="req-card">
         <h3>Untuk Mahasiswa</h3>
         <ul>
-          <li>NIM yang terdaftar</li>
-          <li>Surat rekomendasi dari kampus</li>
-          <li>CV yang profesional</li>
-          <li>Surat lamaran</li>
+          <li>NIM yang terdaftar dan valid</li>
+          <li>Surat pengantar dari kampus (PDF, maks 4MB)</li>
+          <li>Transkrip nilai (PDF/JPG/PNG, maks 4MB)</li>
+          <li>CV yang profesional (PDF, opsional)</li>
+          <li>Proposal kegiatan (PDF, opsional)</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="tips-section" style="margin-top: 24px;">
+      <div class="tips-title">Tips Persiapan Dokumen</div>
+      <ul class="tips-list">
+        <li>Pastikan semua dokumen dalam format yang diminta (PDF untuk surat, PDF/JPG/PNG untuk transkrip)</li>
+        <li>Ukuran file tidak melebihi 4MB per dokumen</li>
+        <li>Scan dokumen dengan resolusi yang jelas dan mudah dibaca</li>
+        <li>Surat pengantar harus ditandatangani dan dicap oleh pihak sekolah/kampus</li>
+        <li>Periksa kembali semua data sebelum mengunggah</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section">
+    <h2 class="section-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+    <p class="section-desc">Temukan jawaban untuk pertanyaan umum seputar pendaftaran magang</p>
+
+    <div class="faq-section">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Berapa lama proses verifikasi pengajuan magang?
+        </button>
+        <div class="faq-answer">
+          Proses verifikasi biasanya memakan waktu <strong>1-3 hari kerja</strong> setelah Anda mengirimkan pengajuan lengkap. Anda dapat memantau status pengajuan melalui dashboard akun Anda.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Apakah saya bisa mengajukan ke lebih dari satu OPD?
+        </button>
+        <div class="faq-answer">
+          Tidak, Anda <strong>hanya dapat memiliki 1 pengajuan aktif</strong> dalam satu waktu. Jika pengajuan Anda ditolak atau selesai, Anda dapat mengajukan kembali ke OPD yang sama atau berbeda.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Apa yang harus saya lakukan jika pengajuan ditolak?
+        </button>
+        <div class="faq-answer">
+          Jika pengajuan ditolak, Anda akan menerima <strong>alasan penolakan</strong> di dashboard. Anda dapat:
+          <ul>
+            <li>Memperbaiki dokumen atau data yang kurang sesuai</li>
+            <li>Mengajukan kembali ke OPD yang sama setelah perbaikan</li>
+            <li>Mencoba mengajukan ke OPD lain yang sesuai dengan minat Anda</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Format file apa saja yang diterima untuk dokumen?
+        </button>
+        <div class="faq-answer">
+          <ul>
+            <li><strong>Surat Pengantar:</strong> PDF (maks 4MB)</li>
+            <li><strong>Transkrip/Rapor:</strong> PDF, JPG, atau PNG (maks 4MB)</li>
+            <li><strong>CV:</strong> PDF (maks 4MB, opsional)</li>
+            <li><strong>Proposal:</strong> PDF (maks 4MB, opsional)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Bagaimana cara menghubungi OPD jika ada pertanyaan?
+        </button>
+        <div class="faq-answer">
+          Setelah pengajuan Anda disetujui, informasi kontak OPD akan tersedia di halaman detail pengajuan Anda. Anda dapat menghubungi OPD melalui nomor telepon atau email yang tertera.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Apakah ada biaya untuk mendaftar?
+        </button>
+        <div class="faq-answer">
+          <strong>Tidak ada biaya</strong> untuk mendaftar dan mengajukan magang melalui POMAS. Seluruh proses pendaftaran adalah gratis.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Berapa lama durasi magang yang ideal?
+        </button>
+        <div class="faq-answer">
+          Durasi magang disesuaikan dengan <strong>kebutuhan akademik</strong> Anda. Pastikan periode yang Anda pilih sesuai dengan jadwal dari sekolah/kampus Anda. Umumnya berkisar antara 1-3 bulan.
+        </div>
       </div>
     </div>
   </section>
@@ -201,6 +305,14 @@
       <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar Sekarang</a>
     </div>
   </section>
+
+  <script>
+    function toggleFAQ(button) {
+      button.classList.toggle('active');
+      const answer = button.nextElementSibling;
+      answer.classList.toggle('active');
+    }
+  </script>
 
   <footer class="footer2">
     <div class="footer2-inner">

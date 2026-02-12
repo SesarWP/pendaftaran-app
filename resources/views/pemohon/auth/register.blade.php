@@ -30,6 +30,11 @@
         </div>
       @endif
 
+      <div class="info-banner" style="margin-bottom: 24px;">
+        <div class="info-banner-title">Panduan Pendaftaran</div>
+        Lengkapi formulir di bawah ini untuk membuat akun POMAS. Proses pendaftaran memakan waktu sekitar <strong>5-10 menit</strong>. Setelah mendaftar, Anda dapat langsung login dan mengajukan magang.
+      </div>
+
       <form method="POST" action="{{ route('pemohon.register.store') }}" novalidate>
         @csrf
 
@@ -43,6 +48,7 @@
             name="name"
             value="{{ old('name') }}"
             required>
+          <small class="help-text">Masukkan nama lengkap sesuai dengan identitas resmi Anda</small>
         </div>
 
         <!-- Email & No HP -->
@@ -56,6 +62,7 @@
               name="email"
               value="{{ old('email') }}"
               required>
+            <small class="help-text">Gunakan email aktif yang dapat Anda akses untuk login</small>
           </div>
           <div class="row">
             <label for="no_hp">No HP (opsional)</label>
@@ -66,6 +73,7 @@
               name="no_hp"
               value="{{ old('no_hp') }}"
               placeholder="Contoh: 081234567890">
+            <small class="help-text">Format: 08xxxxxxxxxx (tanpa spasi atau tanda hubung)</small>
           </div>
         </div>
 
@@ -81,6 +89,7 @@
             <option value="smk" @selected(old('pemohon_tipe')==='smk')>SMK</option>
             <option value="mahasiswa" @selected(old('pemohon_tipe')==='mahasiswa')>Mahasiswa</option>
           </select>
+          <small class="help-text">Pilih SMK jika Anda siswa SMK, atau Mahasiswa jika dari perguruan tinggi</small>
         </div>
 
         <!-- Nama Sekolah / Kampus -->
@@ -93,6 +102,7 @@
             name="instansi_nama"
             value="{{ old('instansi_nama') }}"
             required>
+          <small class="help-text">Tulis nama lengkap sekolah atau kampus Anda</small>
         </div>
 
         <!-- Jurusan / Prodi & NISN / NIM -->
@@ -106,6 +116,7 @@
               name="jurusan"
               value="{{ old('jurusan') }}"
               required>
+            <small class="help-text">Contoh: Teknik Informatika, Akuntansi, dll</small>
           </div>
           <div class="row">
             <label for="nomor_induk">NISN / NIM</label>
@@ -116,6 +127,7 @@
               name="nomor_induk"
               value="{{ old('nomor_induk') }}"
               required>
+            <small class="help-text">Masukkan nomor induk sesuai kartu pelajar/mahasiswa</small>
           </div>
         </div>
 
@@ -144,6 +156,7 @@
                 minlength="8"
                 required
             >
+            <small class="help-text">Minimal 8 karakter, kombinasi huruf dan angka lebih aman</small>
             </div>
 
           <div class="row">
@@ -154,6 +167,7 @@
                 id="password_confirmation"
                 name="password_confirmation"
                 required>
+            <small class="help-text">Ketik ulang password yang sama dengan di atas</small>
             </div>
 
         </div>

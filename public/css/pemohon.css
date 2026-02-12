@@ -32,6 +32,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -349,9 +350,12 @@ textarea.input {
 }
 
 .hero {
-  background: linear-gradient(180deg, rgba(22, 45, 80, 1) 0%, rgba(22, 45, 80, 0.85) 100%);
+  background:
+    linear-gradient(180deg, rgba(22, 45, 80, 0.85) 0%, rgba(22, 45, 80, 0.90) 100%),
+    url('../images/pemda-building.jpg') center center / cover no-repeat;
   padding: 18px 20px 55px;
   color: #FFFFFF;
+  position: relative;
 }
 
 @media (max-width: 600px) {
@@ -564,7 +568,7 @@ textarea.input {
 }
 
 .app-nav-inner {
-    min-height: 72px;
+  min-height: 72px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 14px 20px;
@@ -694,7 +698,7 @@ textarea.input {
 .nav-toggle {
   display: none;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   padding: 8px 10px;
   border-radius: 10px;
@@ -717,7 +721,8 @@ textarea.input {
 
   /* menu jadi dropdown panel */
   .app-menu {
-    display: none;            /* sembunyi default */
+    display: none;
+    /* sembunyi default */
     position: absolute;
     right: 20px;
     top: 58px;
@@ -727,7 +732,7 @@ textarea.input {
     width: 220px;
 
     background: #0f2a49;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 14px;
     padding: 10px;
     box-shadow: 0 12px 40px rgba(2, 6, 23, 0.25);
@@ -864,15 +869,15 @@ textarea.input {
 }
 
 .optional {
-    font-size: 12px;
-    color: #666;
-    font-weight: normal;
+  font-size: 12px;
+  color: #666;
+  font-weight: normal;
 }
 
 .landing-header {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 600px) {
@@ -883,7 +888,7 @@ textarea.input {
 }
 
 .landing-logo {
-max-width: 520px;
+  max-width: 520px;
   width: 100%;
   height: auto;
   display: block;
@@ -897,17 +902,17 @@ max-width: 520px;
 }
 
 .landing-title {
-    font-size: 26px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
 }
 
 .landing-subtitle {
-    font-size: 14px;
-    color: #475569;
-    max-width: 480px;
-    margin: 0 auto;
+  font-size: 14px;
+  color: #475569;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .card2-head {
@@ -919,9 +924,9 @@ max-width: 520px;
 }
 
 .brand img {
-    height: 70px;
-    width: auto;
-    display: block;
+  height: 70px;
+  width: auto;
+  display: block;
 }
 
 .muted {
@@ -1484,81 +1489,572 @@ max-width: 520px;
   }
 }
 
-.pill-success { background-color: #10b981; color: white; }
-.pill-error { background-color: #ef4444; color: white; }
-.pill-warning { background-color: #f59e0b; color: white; }
-.pill-info { background-color: #3b82f6; color: white; }
+.pill-success {
+  background-color: #10b981;
+  color: white;
+}
+
+.pill-error {
+  background-color: #ef4444;
+  color: white;
+}
+
+.pill-warning {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.pill-info {
+  background-color: #3b82f6;
+  color: white;
+}
 
 .footer2 {
-    background: #FF6600;
-    color: #fff;
-    margin-top: 80px;
-    padding: 50px 20px 20px;
+  background: #FF6600;
+  color: #fff;
+  margin-top: 80px;
+  padding: 50px 20px 20px;
 }
 
 .footer2-inner {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
 }
 
 .footer2-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .footer2-desc {
-    font-size: 14px;
-    line-height: 1.6;
-    opacity: 0.85;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
 }
 
 .footer2-heading {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .footer2-links,
 .footer2-contact {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer2-links li,
 .footer2-contact li {
-    margin-bottom: 8px;
-    font-size: 14px;
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .footer2-links a {
-    color: #162d50;
-    text-decoration: none;
-    opacity: 0.85;
+  color: #162d50;
+  text-decoration: none;
+  opacity: 0.85;
 }
 
 .footer2-links a:hover {
-    opacity: 1;
-    text-decoration: underline;
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .footer2-bottom {
-    border-top: 1px solid rgba(255,255,255,0.15);
-    margin-top: 30px;
-    padding-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    opacity: 0.75;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 30px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.75;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .footer2-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+  .footer2-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* ===== STYLE PANDUAN PENDAFTARAN ===== */
+
+/* Teks Bantuan untuk Field Form */
+.help-text {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+  line-height: 1.5;
+  display: block;
+}
+
+.help-text-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.help-text-icon::before {
+  content: "ℹ️";
+  font-size: 14px;
+}
+
+/* Banner Informasi */
+.info-banner {
+  background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+  border: 1px solid #93c5fd;
+  border-left: 4px solid #3b82f6;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  color: #1e40af;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.info-banner-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-banner-title::before {
+  content: "💡";
+  font-size: 18px;
+}
+
+.info-banner ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.info-banner li {
+  margin-bottom: 4px;
+}
+
+/* Bagian FAQ */
+.faq-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: #FF6600;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  background: #FFFFFF;
+  border: none;
+  padding: 16px 18px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #162D50;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+  background: #f8fafc;
+}
+
+.faq-question::after {
+  content: "▼";
+  font-size: 10px;
+  color: #FF6600;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.faq-answer.active {
+  padding: 0 18px 16px 18px;
+  max-height: 500px;
+}
+
+.faq-answer ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.faq-answer li {
+  margin-bottom: 6px;
+}
+
+.faq-answer strong {
+  color: #162D50;
+  font-weight: 600;
+}
+
+/* Checklist Dokumen */
+.doc-checklist {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.doc-checklist-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #162D50;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc-checklist-title::before {
+  content: "📋";
+  font-size: 18px;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: #FFFFFF;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.checklist-item:hover {
+  border-color: #cbd5e1;
+}
+
+.checklist-item.required {
+  border-left: 3px solid #ef4444;
+}
+
+.checklist-item.optional {
+  border-left: 3px solid #94a3b8;
+}
+
+.checklist-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.checklist-item.required .checklist-icon {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.checklist-item.optional .checklist-icon {
+  border-color: #94a3b8;
+  color: #94a3b8;
+}
+
+.checklist-content {
+  flex-grow: 1;
+}
+
+.checklist-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #162D50;
+  margin-bottom: 2px;
+}
+
+.checklist-desc {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.checklist-badge {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.checklist-badge.required {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.checklist-badge.optional {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* Tooltip */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-trigger {
+  cursor: help;
+  color: #FF6600;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  margin-bottom: 8px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1e293b;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+}
+
+/* Bagian Panduan dengan Ikon */
+.guide-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.guide-card {
+  background: #FFFFFF;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  transition: all 0.2s ease;
+}
+
+.guide-card:hover {
+  border-color: #FF6600;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.guide-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.guide-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #162D50;
+  margin-bottom: 8px;
+}
+
+.guide-card-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Bagian Tips */
+.tips-section {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.tips-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tips-title::before {
+  content: "💡";
+  font-size: 20px;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  color: #78350f;
+  font-size: 13px;
+  line-height: 1.7;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.tips-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.tips-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Item Alur dengan Estimasi Waktu */
+.flow-time {
+  display: inline-block;
+  font-size: 11px;
+  color: #FF6600;
+  font-weight: 600;
+  margin-top: 6px;
+  padding: 4px 8px;
+  background: rgba(255, 102, 0, 0.08);
+  border-radius: 6px;
+}
+
+/* Input dengan Ikon */
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.input-with-icon .input {
+  padding-left: 38px;
+}
+
+/* Peningkatan Alert Error */
+.alert-error {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #ef4444;
+  color: #991b1b;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.alert-error strong {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Penyesuaian Responsif untuk Elemen Panduan */
+@media (max-width: 768px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-question {
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+
+  .faq-answer {
+    font-size: 12px;
+  }
+
+  .doc-checklist {
+    padding: 14px;
+  }
+
+  .checklist-item {
+    padding: 8px;
+  }
+
+  .tooltip {
+    white-space: normal;
+    max-width: 200px;
+  }
 }

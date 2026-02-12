@@ -153,6 +153,49 @@
         @endif
 
         @if($bolehAjukan)
+            <div class="doc-checklist" style="margin-bottom: 20px;">
+                <div class="doc-checklist-title">Checklist Dokumen</div>
+                <p class="muted" style="margin-bottom: 14px;">Pastikan dokumen berikut sudah siap sebelum mengisi form:</p>
+                
+                <ul class="checklist">
+                    <li class="checklist-item required">
+                        <div class="checklist-icon">!</div>
+                        <div class="checklist-content">
+                            <div class="checklist-label">Surat Pengantar</div>
+                            <div class="checklist-desc">Format: PDF | Ukuran maks: 4MB | Harus ditandatangani dan dicap institusi</div>
+                        </div>
+                        <span class="checklist-badge required">Wajib</span>
+                    </li>
+                    
+                    <li class="checklist-item required">
+                        <div class="checklist-icon">!</div>
+                        <div class="checklist-content">
+                            <div class="checklist-label">Transkrip Nilai / Rapor</div>
+                            <div class="checklist-desc">Format: PDF, JPG, atau PNG | Ukuran maks: 4MB | Scan dengan jelas</div>
+                        </div>
+                        <span class="checklist-badge required">Wajib</span>
+                    </li>
+                    
+                    <li class="checklist-item optional">
+                        <div class="checklist-icon">○</div>
+                        <div class="checklist-content">
+                            <div class="checklist-label">Proposal Magang</div>
+                            <div class="checklist-desc">Format: PDF | Ukuran maks: 4MB | Berisi rencana kegiatan magang</div>
+                        </div>
+                        <span class="checklist-badge optional">Opsional</span>
+                    </li>
+                    
+                    <li class="checklist-item optional">
+                        <div class="checklist-icon">○</div>
+                        <div class="checklist-content">
+                            <div class="checklist-label">Curriculum Vitae (CV)</div>
+                            <div class="checklist-desc">Format: PDF | Ukuran maks: 4MB | Berisi riwayat pendidikan dan pengalaman</div>
+                        </div>
+                        <span class="checklist-badge optional">Opsional</span>
+                    </li>
+                </ul>
+            </div>
+            
             <form method="POST" action="{{ route('pemohon.usulan.store') }}" enctype="multipart/form-data" class="form2">
                 @csrf
 
