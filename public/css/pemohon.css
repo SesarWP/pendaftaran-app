@@ -19,6 +19,12 @@ body {
   max-width: 600px;
 }
 
+@media (min-width: 700px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
 .card {
   background: #FFFFFF;
   border-radius: 12px;
