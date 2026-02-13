@@ -10,227 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/pemohon.css') }}">
-  <style>
-    /* Layout Split-Screen Full */
-    .auth-wrapper {
-      display: flex;
-      min-height: 100vh;
-      width: 100%;
-    }
-
-    /* Kiri - Form */
-    .auth-left {
-      flex: 0 0 40%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 50px;
-      background: #FFFFFF;
-    }
-
-    .auth-left-inner {
-      width: 100%;
-      max-width: 380px;
-    }
-
-    .auth-logo {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .auth-logo img {
-      height: 100px;
-      width: auto;
-    }
-
-    .auth-heading {
-      font-size: 26px;
-      font-weight: 700;
-      color: #162D50;
-      text-align: center;
-      margin-bottom: 6px;
-      white-space: nowrap;
-    }
-
-    .auth-sub {
-      font-size: 13px;
-      font-weight: 500;
-      color: #FF6600;
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .auth-label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #162D50;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-    }
-
-    .auth-input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      color: #334155;
-      background: #FFFFFF;
-      transition: border-color 0.2s ease;
-      box-sizing: border-box;
-    }
-
-    .auth-input:focus {
-      outline: none;
-      border-color: #FF6600;
-      box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
-    }
-
-    .auth-input::placeholder {
-      color: #94a3b8;
-    }
-
-    .auth-field {
-      margin-bottom: 20px;
-    }
-
-    .auth-btn {
-      width: 100%;
-      padding: 13px;
-      background: #FF6600;
-      color: #FFFFFF;
-      border: none;
-      border-radius: 10px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-top: 8px;
-    }
-
-    .auth-btn:hover {
-      background: #e55a00;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
-    }
-
-    .auth-links {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    .auth-links a {
-      color: #FF6600;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .auth-links a:hover {
-      text-decoration: underline;
-      color: #162D50;
-    }
-
-    /* Kanan - Branding */
-    .auth-right {
-      flex: 0 0 60%;
-      background:
-        linear-gradient(180deg, rgba(22, 45, 80, 0.75) 0%, rgba(22, 45, 80, 0.85) 100%),
-        url('{{ asset("images/pemda-building.jpg") }}') center center / cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-      position: relative;
-    }
-
-    .auth-right-logo-top {
-      position: absolute;
-      top: 24px;
-      left: 28px;
-    }
-
-    .auth-right-logo-top img {
-      height: 100px;
-      width: auto;
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-    }
-
-    .auth-brand-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .auth-brand-center .logo-pomas {
-      height: 180px;
-      width: auto;
-      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3));
-      margin-bottom: 24px;
-    }
-
-    .auth-brand-text {
-      max-width: 680px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .auth-brand-title {
-      font-size: 48px;
-      font-weight: 700;
-      color: #FFFFFF;
-      text-align: center;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      letter-spacing: 3px;
-    }
-
-    .auth-brand-desc {
-      font-size: 16px;
-      color: #e0f2fe;
-      text-align: center;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .auth-brand-footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: #cbd5e1;
-      font-size: 13px;
-      padding: 14px 20px;
-      background: rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(4px);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .auth-wrapper {
-        flex-direction: column;
-      }
-      .auth-left {
-        flex: 1;
-        min-height: 100vh;
-        padding: 40px 24px;
-      }
-      .auth-right {
-        display: none;
-      }
-    }
-  </style>
 </head>
 
 <body style="margin:0; padding:0;">
@@ -259,7 +38,7 @@
           @csrf
 
           <div class="auth-field">
-            <label class="auth-label" for="email">Username</label>
+            <label class="auth-label" for="email">Email</label>
             <input
               class="auth-input"
               type="email"
@@ -267,20 +46,42 @@
               name="email"
               value="{{ old('email') }}"
               placeholder="Masukkan email anda"
+              autocomplete="email"
               required
             >
           </div>
 
           <div class="auth-field">
             <label class="auth-label" for="password">Password</label>
-            <input
-              class="auth-input"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Masukkan password anda"
-              required
-            >
+            <div class="auth-password-wrapper">
+              <input
+                class="auth-input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Masukkan password anda"
+                autocomplete="current-password"
+                required
+              >
+              <button type="button" class="auth-password-toggle" onclick="togglePassword()" aria-label="Tampilkan password">
+                <svg id="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg id="icon-eye-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-options">
+            <label class="auth-remember">
+              <input type="checkbox" name="remember" id="remember">
+              <span>Ingat saya</span>
+            </label>
+            <a href="{{ route('pemohon.password.request') }}" class="auth-forgot">Lupa password?</a>
           </div>
 
           <button type="submit" class="auth-btn">Login</button>
@@ -314,5 +115,23 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById('password');
+      const eyeOn = document.getElementById('icon-eye');
+      const eyeOff = document.getElementById('icon-eye-off');
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        eyeOn.style.display = 'none';
+        eyeOff.style.display = 'block';
+      } else {
+        input.type = 'password';
+        eyeOn.style.display = 'block';
+        eyeOff.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
