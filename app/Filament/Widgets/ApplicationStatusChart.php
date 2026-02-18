@@ -60,6 +60,8 @@ class ApplicationStatusChart extends ChartWidget
                         '#64748B',
                     ],
                     'borderWidth' => 0,
+                    'barThickness' => 40,
+                    'maxBarThickness' => 50,
                 ],
             ],
             'labels' => ['Diproses', 'Disetujui', 'Ditolak', 'Selesai'],
@@ -69,7 +71,7 @@ class ApplicationStatusChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'doughnut';
+        return 'bar';
     }
 
     protected function getOptions(): array
@@ -78,14 +80,17 @@ class ApplicationStatusChart extends ChartWidget
             'maintainAspectRatio' => false,
             'plugins' => [
                 'legend' => [
-                    'position' => 'bottom',
-                    'labels' => [
-                        'usePointStyle' => true,
+                    'display' => false,
+                ],
+            ],
+            'scales' => [
+                'y' => [
+                    'beginAtZero' => true,
+                    'ticks' => [
+                        'stepSize' => 1,
                     ],
                 ],
             ],
-            'cutout' => '65%',
-            'hoverOffset' => 8,
         ];
     }
 

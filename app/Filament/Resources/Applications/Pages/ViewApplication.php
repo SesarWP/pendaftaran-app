@@ -182,7 +182,7 @@ class ViewApplication extends ViewRecord
                 ->icon('heroicon-o-flag')
                 ->requiresConfirmation()
                 ->visible(function (): bool {
-                    if ($this->record->status !== 'disetujui') {
+                    if ($this->record->status !== ApplicationStatus::DISETUJUI->value) {
                         return false;
                     }
 

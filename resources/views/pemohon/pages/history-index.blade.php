@@ -63,7 +63,6 @@
                                 <td style="padding: 12px;">
                                     {!! $statusPill($app->status) !!}
                                     @if($app->status === ApplicationStatus::DITOLAK->value && $app->alasan_penolakan)
-                                        <br>
                                     @endif
                                 </td>
                             </tr>
