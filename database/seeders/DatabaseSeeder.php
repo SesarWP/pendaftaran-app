@@ -30,5 +30,9 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('user12345'),
             'is_admin' => 0,
         ]);
+
+        $this->call([
+            OpdSeeder::class,
+        ]);
     }
 }
