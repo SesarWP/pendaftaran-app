@@ -69,4 +69,27 @@ class Application extends Model
     {
         return $this->status === ApplicationStatus::SELESAI->value;
     }
+
+    /**
+     * Get real-time status of the internship based on dates.
+     * Returns: 'WAITING', 'ACTIVE', 'FINISHED', or null (if not approved).
+     */
+    public function getRealTimeStatusAttribute(): ?string
+    {
+        if ($this->status !== ApplicationStatus::DISETUJUI->value) {
+            return null;
+        }
+
+        $today = now()->startOfDay();
+
+        if ($today->lt($this->tanggal_mulai)) {
+            return 'WAITING'; // Belum mulai
+        }
+
+        if ($today->gt($this->tanggal_selesai)) {
+            return 'FINISHED'; // Sudah selesai
+        }
+
+        return 'ACTIVE'; // Sedang berlangsung
+    }
 }

@@ -44,6 +44,13 @@
     Usulan Magang
   </a>
 
+  <a
+    class="app-link {{ request()->routeIs('pemohon.history') ? 'active' : '' }}"
+    href="{{ route('pemohon.history') }}"
+  >
+    Riwayat Permohonan
+  </a>
+
   <!-- Profile Dropdown -->
   <div class="dropdown" id="profileDropdownWrap">
     <button class="dropdown-btn" type="button" id="profileDropdownBtn">

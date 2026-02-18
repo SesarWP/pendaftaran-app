@@ -44,6 +44,18 @@ class UsulanMagangController extends Controller
         return view('pemohon.pages.usulan-index', compact('last', 'bolehAjukan', 'opds', 'user'));
     }
 
+    public function history(Request $request)
+    {
+        $user = $request->user();
+
+        $applications = $user->applications()
+            ->with(['opd'])
+            ->latest('created_at')
+            ->get();
+
+        return view('pemohon.pages.history-index', compact('applications'));
+    }
+
     public function store(Request $request)
     {
         $user = $request->user();

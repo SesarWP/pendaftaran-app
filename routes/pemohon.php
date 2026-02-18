@@ -46,6 +46,9 @@ Route::prefix('pemohon')->name('pemohon.')->group(function () {
         Route::post('usulan', [UsulanMagangController::class, 'store'])
             ->name('usulan.store');
 
+        Route::get('history', [UsulanMagangController::class, 'history'])
+            ->name('history');
+
         // Profil Pemohon
         Route::get('profil', [ProfileController::class, 'edit'])
             ->name('profile');

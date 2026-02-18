@@ -23,6 +23,15 @@
             default => '<span class="pill">'.$label.'</span>',
         };
     };
+
+    $realTimeStatusPill = function ($status) {
+        return match ($status) {
+            'WAITING' => '<span class="pill" style="background:#fef9c3;color:#854d0e;">MENUNGGU MULAI</span>',
+            'ACTIVE' => '<span class="pill" style="background:#dbeafe;color:#1e40af;">SEDANG MAGANG</span>',
+            'FINISHED' => '<span class="pill" style="background:#f1f5f9;color:#475569;">SELESAI MAGANG</span>',
+            default => '',
+        };
+    };
 @endphp
 
 <div class="app-main">
@@ -61,9 +70,16 @@
                 @else
                     <div class="kv">
                         <div class="kv-row">
-                            <span>Status</span>
+                            <span>Status Pengajuan</span>
                             <b>{!! $statusPill($last->status) !!}</b>
                         </div>
+
+                        @if($last->real_time_status)
+                        <div class="kv-row">
+                            <span>Status Magang</span>
+                            <b>{!! $realTimeStatusPill($last->real_time_status) !!}</b>
+                        </div>
+                        @endif
                         <div class="kv-row">
                             <span>OPD Tujuan</span>
                             <b>{{ $last->opd->nama ?? '-' }}</b>
@@ -84,7 +100,7 @@
                     <div class="actions">
                         <a href="{{ route('pemohon.usulan.index') }}" class="btn-primary2">Lihat Detail</a>
 
-                        @if(in_array($last->status, [ApplicationStatus::DITOLAK->value, ApplicationStatus::SELESAI->value], true))
+                        @if(in_array($last->status, [ApplicationStatus::DITOLAK->value, ApplicationStatus::SELESAI->value], true) || $last->real_time_status === 'FINISHED')
                             <a href="{{ route('pemohon.usulan.index') }}" class="btn-outline2">Ajukan Lagi</a>
                         @endif
                     </div>
