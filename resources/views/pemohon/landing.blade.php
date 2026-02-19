@@ -348,6 +348,23 @@ Sragen 57213, Jateng, Indonesia</li>
         </div>
     </div>
 
+    <!-- Map Lokasi -->
+    <div class="footer2-map">
+        <h4 class="footer2-heading">📍 Lokasi Kami</h4>
+        <div class="footer2-map-frame">
+            <iframe
+                src="https://maps.google.com/maps?q=-7.4242988,111.0043057&z=17&output=embed"
+                width="100%"
+                height="250"
+                style="border:0; border-radius: 12px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lokasi Kantor Pemerintah Kabupaten Sragen"
+            ></iframe>
+        </div>
+    </div>
+
     <div class="footer2-bottom">
         <p>
             © {{ date('Y') }} Portal Magang Kabupaten Sragen. All rights reserved.
