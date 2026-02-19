@@ -88,27 +88,22 @@
       <div class="flow-item">
         <div class="flow-title">Daftar Akun</div>
         <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
-        <span class="flow-time">⏱ 3-5 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Lengkapi Profil</div>
         <div class="flow-text">Isi data instansi, jurusan/prodi, nomor induk (NISN/NIM), dan kontak yang dapat dihubungi.</div>
-        <span class="flow-time">⏱ 5 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Ajukan Magang</div>
         <div class="flow-text">Pilih OPD tujuan dan tentukan periode magang sesuai jadwal akademik Anda.</div>
-        <span class="flow-time">⏱ 2-3 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Upload Berkas</div>
         <div class="flow-text">Unggah surat pengantar, transkrip/rapor (wajib), serta CV dan proposal (opsional). Maks 4MB per file.</div>
-        <span class="flow-time">⏱ 5-10 menit</span>
       </div>
       <div class="flow-item">
         <div class="flow-title">Pantau Status</div>
         <div class="flow-text">Pantau status pengajuan Anda: Diproses, Disetujui, Ditolak, atau Selesai.</div>
-        <span class="flow-time">⏱ 1-3 hari kerja</span>
       </div>
     </div>
 
@@ -122,7 +117,6 @@
         <div class="flow-item">
           <div class="flow-title">Daftar Akun</div>
           <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
-          <span class="flow-time">⏱ 3-5 menit</span>
         </div>
       </div>
 
@@ -134,7 +128,6 @@
         <div class="flow-item">
           <div class="flow-title">Lengkapi Profil</div>
           <div class="flow-text">Isi data instansi, jurusan/prodi, nomor induk (NISN/NIM), dan kontak yang dapat dihubungi.</div>
-          <span class="flow-time">⏱ 5 menit</span>
         </div>
       </div>
 
@@ -146,7 +139,6 @@
         <div class="flow-item">
           <div class="flow-title">Ajukan Magang</div>
           <div class="flow-text">Pilih OPD tujuan dan tentukan periode magang sesuai jadwal akademik Anda.</div>
-          <span class="flow-time">⏱ 2-3 menit</span>
         </div>
       </div>
 
@@ -158,7 +150,6 @@
         <div class="flow-item">
           <div class="flow-title">Upload Berkas</div>
           <div class="flow-text">Unggah surat pengantar, transkrip/rapor (wajib), serta CV dan proposal (opsional). Maks 4MB per file.</div>
-          <span class="flow-time">⏱ 5-10 menit</span>
         </div>
       </div>
 
@@ -169,7 +160,6 @@
         <div class="flow-item">
           <div class="flow-title">Pantau Status</div>
           <div class="flow-text">Pantau status pengajuan Anda: Diproses, Disetujui, Ditolak, atau Selesai.</div>
-          <span class="flow-time">⏱ 1-3 hari kerja</span>
         </div>
       </div>
     </div>
