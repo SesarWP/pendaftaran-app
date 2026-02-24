@@ -86,10 +86,10 @@
             name="pemohon_tipe"
             required>
             <option value="">-- Pilih --</option>
-            <option value="smk" @selected(old('pemohon_tipe')==='smk')>SMK</option>
+            <option value="smk" @selected(old('pemohon_tipe')==='smk')>Pelajar</option>
             <option value="mahasiswa" @selected(old('pemohon_tipe')==='mahasiswa')>Mahasiswa</option>
           </select>
-          <small class="help-text">Pilih SMK jika Anda siswa SMK, atau Mahasiswa jika dari perguruan tinggi</small>
+          <small class="help-text">Pilih Pelajar jika Anda siswa sekolah, atau Mahasiswa jika dari perguruan tinggi</small>
         </div>
 
         <!-- Nama Sekolah / Kampus -->

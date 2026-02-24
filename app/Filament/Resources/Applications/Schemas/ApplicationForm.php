@@ -26,7 +26,7 @@ class ApplicationForm
                     ->disabled(),
                 Select::make('kategori')
                     ->label('Kategori')
-                    ->options(['mahasiswa' => 'Mahasiswa', 'smk' => 'SMK'])
+                    ->options(['mahasiswa' => 'Mahasiswa', 'smk' => 'Pelajar'])
                     ->required()
                     ->disabled(),
                 TextInput::make('institusi')

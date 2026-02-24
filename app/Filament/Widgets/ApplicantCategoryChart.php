@@ -61,7 +61,7 @@ class ApplicantCategoryChart extends ChartWidget
                     'borderWidth' => 0,
                 ],
             ],
-            'labels' => ['Mahasiswa', 'PKL SMK'],
+            'labels' => ['Mahasiswa', 'Pelajar'],
         ];
     }
 

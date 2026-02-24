@@ -87,7 +87,7 @@
     <div class="flow-grid-desktop">
       <div class="flow-item">
         <div class="flow-title">Daftar Akun</div>
-        <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
+        <div class="flow-text">Pilih tipe Pelajar/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
       </div>
       <div class="flow-item">
         <div class="flow-title">Lengkapi Profil</div>
@@ -116,7 +116,7 @@
         </div>
         <div class="flow-item">
           <div class="flow-title">Daftar Akun</div>
-          <div class="flow-text">Pilih tipe SMK/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
+          <div class="flow-text">Pilih tipe Pelajar/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
         </div>
       </div>
 
@@ -172,7 +172,7 @@
 
     <div class="req-grid">
       <div class="req-card">
-        <h3>Untuk SMK</h3>
+        <h3>Untuk Pelajar</h3>
         <ul>
           <li>NISN yang terdaftar dan valid</li>
           <li>Surat pengantar dari sekolah (PDF, maks 4MB)</li>

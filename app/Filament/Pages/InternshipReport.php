@@ -118,7 +118,7 @@ class InternshipReport extends Page implements HasTable
                             ->options([
                                 'all' => 'Semua',
                                 'mahasiswa' => 'Mahasiswa',
-                                'smk' => 'SMK',
+                                'smk' => 'Pelajar',
                             ])
                             ->default('all'),
                     ])
