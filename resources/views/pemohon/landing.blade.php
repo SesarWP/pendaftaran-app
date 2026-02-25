@@ -23,18 +23,39 @@
                 src="{{ asset('images/hero-dashboard.png') }}"
                 alt="Portal Magang Sragen"
             >
+            <span class="brand-text">POMAS</span>
         </a>
 
-        <nav class="nav-actions">
+        <nav class="nav-links" id="navLinks">
+            <a href="#alur" class="nav-link">Alur</a>
+            <a href="#persyaratan" class="nav-link">Persyaratan</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+
+        <div class="nav-right">
             <a href="{{ route('pemohon.login') }}" class="btn-outline">
                 Masuk
             </a>
-
             <a href="{{ route('pemohon.register') }}" class="btn-primary">
                 Daftar
             </a>
-        </nav>
+        </div>
 
+        <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile">
+        <a href="#alur" class="nav-mobile-link" onclick="closeMobileMenu()">Alur Pendaftaran</a>
+        <a href="#persyaratan" class="nav-mobile-link" onclick="closeMobileMenu()">Persyaratan</a>
+        <a href="#faq" class="nav-mobile-link" onclick="closeMobileMenu()">FAQ</a>
+        <div class="nav-mobile-actions">
+            <a href="{{ route('pemohon.login') }}" class="btn-outline">Masuk</a>
+            <a href="{{ route('pemohon.register') }}" class="btn-primary">Daftar</a>
+        </div>
     </div>
 </header>
 
@@ -57,7 +78,7 @@
   </section>
 
   <!-- ALUR PENDAFTARAN -->
-<section class="section">
+<section class="section" id="alur">
   <h2 class="section-title">Alur Pendaftaran</h2>
   <p class="section-desc">Ikuti langkah berikut agar pengajuan magang Anda diproses.</p>
 
@@ -167,7 +188,7 @@
 </section>
 
   <!-- PERSYARATAN PENDAFTARAN -->
-  <section class="section section-light">
+  <section class="section section-light" id="persyaratan">
     <h2 class="section-title">Persyaratan Pendaftaran</h2>
 
     <div class="req-grid">
@@ -207,7 +228,7 @@
   </section>
 
   <!-- FAQ SECTION -->
-  <section class="section">
+  <section class="section" id="faq">
     <h2 class="section-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
     <p class="section-desc">Temukan jawaban untuk pertanyaan umum seputar pendaftaran magang</p>
 
@@ -301,6 +322,39 @@ Sragen 57213, Jateng, Indonesia</li>
         </p>
     </div>
 </footer>
+
+  <script>
+    // FAQ accordion toggle
+    function toggleFAQ(button) {
+      button.classList.toggle('active');
+      const answer = button.nextElementSibling;
+      answer.classList.toggle('active');
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('navMobile');
+      const hamburger = document.getElementById('navHamburger');
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('navMobile').classList.remove('open');
+      document.getElementById('navHamburger').classList.remove('open');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
