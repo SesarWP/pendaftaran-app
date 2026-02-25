@@ -60,7 +60,7 @@
             <label class="form2-label" for="pemohon_tipe">Tipe Pemohon <span class="required">*</span></label>
             <select id="pemohon_tipe" class="form2-input @error('pemohon_tipe') form2-input-error @enderror" name="pemohon_tipe" required>
               <option value="">-- Pilih Tipe --</option>
-              <option value="smk" @selected(old('pemohon_tipe', $user->pemohon_tipe)==='smk')>Pelajar</option>
+              <option value="pelajar" @selected(old('pemohon_tipe', $user->pemohon_tipe)==='pelajar')>Pelajar</option>
               <option value="mahasiswa" @selected(old('pemohon_tipe', $user->pemohon_tipe)==='mahasiswa')>Mahasiswa</option>
             </select>
             <small class="form2-help">Pilih sesuai status Anda saat ini</small>

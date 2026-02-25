@@ -37,7 +37,7 @@ class ApplicationsTable
                     ->badge()
                     ->formatStateUsing(fn (?string $state) => match ($state) {
                         'mahasiswa' => 'Mahasiswa',
-                        'smk' => 'Pelajar',
+                        'pelajar' => 'Pelajar',
                         default => $state,
                     })
                     ->sortable(),
@@ -128,7 +128,7 @@ class ApplicationsTable
                     ->label('Kategori')
                     ->options([
                         'mahasiswa' => 'Mahasiswa',
-                        'smk' => 'Pelajar',
+                        'pelajar' => 'Pelajar',
                     ]),
 
                 SelectFilter::make('opd_id')

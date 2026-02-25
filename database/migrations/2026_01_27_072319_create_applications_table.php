@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('opd_id')->constrained('opds')->restrictOnDelete();
 
-            // kategori: mahasiswa vs smk
-            $table->enum('kategori', ['mahasiswa', 'smk']);
+            // kategori: mahasiswa vs pelajar
+            $table->enum('kategori', ['mahasiswa', 'pelajar']);
 
             // data pemohon (profil pendaftaran, bukan akun)
             $table->string('institusi'); // kampus/sekolah

@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:120'],
             'no_hp' => ['nullable', 'string', 'max:30'],
-            'pemohon_tipe' => ['required', 'in:smk,mahasiswa'],
+            'pemohon_tipe' => ['required', 'in:pelajar,mahasiswa'],
             'instansi_nama' => ['required', 'string', 'max:150'],
             'jurusan' => ['required', 'string', 'max:120'],
             'nomor_induk' => ['required', 'string', 'max:60'],

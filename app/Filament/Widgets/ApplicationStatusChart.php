@@ -19,7 +19,6 @@ class ApplicationStatusChart extends ChartWidget
         return Opd::query()
             ->orderBy('nama')
             ->pluck('nama', 'id')
-            ->prepend('Semua OPD', 'all')
             ->toArray();
     }
 

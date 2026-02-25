@@ -93,8 +93,8 @@ class UsulanMagangController extends Controller
         return DB::transaction(function () use ($user, $request, $validated) {
 
             // derive kategori from user's profile field 'pemohon_tipe'
-            $kategori = $user->pemohon_tipe; // 'mahasiswa' atau 'smk'
-            if (!in_array($kategori, ['mahasiswa', 'smk'], true)) {
+            $kategori = $user->pemohon_tipe; // 'mahasiswa' atau 'pelajar'
+            if (!in_array($kategori, ['mahasiswa', 'pelajar'], true)) {
                 return back()->with('error', 'Tipe akun tidak valid. Silakan update profil dulu.');
             }
 

@@ -22,7 +22,7 @@ class OpdForm
                 TextInput::make('kode')
                     ->label('Kode OPD')
                     ->maxLength(50)
-                    ->helperText('Opsional. Contoh: DISKOMINFO, DISPORA, DLL.')
+                    ->helperText('')
                     ->dehydrateStateUsing(
                         fn (?string $state) => $state ? strtoupper(trim($state)) : null
                     ),

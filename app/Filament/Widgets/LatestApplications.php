@@ -31,7 +31,7 @@ class LatestApplications extends TableWidget
                     ->badge()
                     ->formatStateUsing(fn (?string $state) => match ($state) {
                         'mahasiswa' => 'Mahasiswa',
-                        'smk' => 'Pelajar',
+                        'pelajar' => 'Pelajar',
                         default => $state,
                     }),
                 TextColumn::make('status')

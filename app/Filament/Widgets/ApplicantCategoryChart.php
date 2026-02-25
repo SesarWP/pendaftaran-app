@@ -28,7 +28,6 @@ class ApplicantCategoryChart extends ChartWidget
         return Opd::query()
             ->orderBy('nama')
             ->pluck('nama', 'id')
-            ->prepend('Semua OPD', 'all')
             ->toArray();
     }
 
@@ -42,21 +41,21 @@ class ApplicantCategoryChart extends ChartWidget
 
         $row = $query->selectRaw("
             SUM(CASE WHEN kategori = 'mahasiswa' THEN 1 ELSE 0 END) AS mahasiswa,
-            SUM(CASE WHEN kategori = 'smk' THEN 1 ELSE 0 END) AS smk
+            SUM(CASE WHEN kategori = 'pelajar' THEN 1 ELSE 0 END) AS pelajar
         ")->first();
 
         $mahasiswa = (int) ($row->mahasiswa ?? 0);
-        $smk = (int) ($row->smk ?? 0);
+        $pelajar = (int) ($row->pelajar ?? 0);
 
         // update heading setiap kali data dihitung
         $this->heading = "Kategori Pemohon ";
-        $this->description = "(Total: " . ($mahasiswa + $smk) . ")";
+        $this->description = "(Total: " . ($mahasiswa + $pelajar) . ")";
 
         return [
             'datasets' => [
                 [
                     'label' => 'Jumlah',
-                    'data' => [$mahasiswa, $smk],
+                    'data' => [$mahasiswa, $pelajar],
                     'backgroundColor' => ['#3B82F6', '#F59E0B'],
                     'borderWidth' => 0,
                 ],

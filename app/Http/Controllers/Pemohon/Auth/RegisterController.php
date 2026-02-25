@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'name' => ['required','string','max:255'],
             'email' => ['required','email','max:255','unique:users,email'],
             'password' => ['required', 'confirmed', Password::min(8)],
-            'pemohon_tipe' => ['required','in:smk,mahasiswa'],
+            'pemohon_tipe' => ['required','in:pelajar,mahasiswa'],
 
             'instansi_nama' => ['required','string','max:255'],
             'jurusan' => ['required','string','max:255'],
