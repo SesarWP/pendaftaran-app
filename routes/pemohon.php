@@ -10,9 +10,13 @@ use App\Http\Controllers\Pemohon\ProfileController;
 use App\Http\Controllers\Pemohon\ApplicationFileController;
 use App\Http\Controllers\Pemohon\Auth\ForgotPasswordController;
 use App\Http\Controllers\Pemohon\Auth\ResetPasswordController;
+use App\Models\Faq;
 
 Route::prefix('pemohon')->name('pemohon.')->group(function () {
-    Route::get('/', fn () => view('pemohon.landing'))->name('home');
+    Route::get('/', function () {
+        $faqs = Faq::active()->ordered()->get();
+        return view('pemohon.landing', compact('faqs'));
+    })->name('home');
 
     Route::middleware('guest')->group(function () {
 

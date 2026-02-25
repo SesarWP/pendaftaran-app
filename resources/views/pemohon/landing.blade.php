@@ -212,78 +212,18 @@
     <p class="section-desc">Temukan jawaban untuk pertanyaan umum seputar pendaftaran magang</p>
 
     <div class="faq-section">
+      @forelse($faqs as $faq)
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFAQ(this)">
-          Berapa lama proses verifikasi pengajuan magang?
+          {{ $faq->question }}
         </button>
         <div class="faq-answer">
-          Proses verifikasi biasanya memakan waktu <strong>1-3 hari kerja</strong> setelah Anda mengirimkan pengajuan lengkap. Anda dapat memantau status pengajuan melalui dashboard akun Anda.
+          {!! $faq->answer !!}
         </div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          Apakah saya bisa mengajukan ke lebih dari satu OPD?
-        </button>
-        <div class="faq-answer">
-          Tidak, Anda <strong>hanya dapat memiliki 1 pengajuan aktif</strong> dalam satu waktu. Jika pengajuan Anda ditolak atau selesai, Anda dapat mengajukan kembali ke OPD yang sama atau berbeda.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          Apa yang harus saya lakukan jika pengajuan ditolak?
-        </button>
-        <div class="faq-answer">
-          Jika pengajuan ditolak, Anda akan menerima <strong>alasan penolakan</strong> di dashboard. Anda dapat:
-          <ul>
-            <li>Memperbaiki dokumen atau data yang kurang sesuai</li>
-            <li>Mengajukan kembali ke OPD yang sama setelah perbaikan</li>
-            <li>Mencoba mengajukan ke OPD lain yang sesuai dengan minat Anda</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          Format file apa saja yang diterima untuk dokumen?
-        </button>
-        <div class="faq-answer">
-          <ul>
-            <li><strong>Surat Pengantar:</strong> PDF (maks 4MB)</li>
-            <li><strong>Transkrip/Rapor:</strong> PDF, JPG, atau PNG (maks 4MB)</li>
-            <li><strong>CV:</strong> PDF (maks 4MB, opsional)</li>
-            <li><strong>Proposal:</strong> PDF (maks 4MB, opsional)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          Bagaimana cara menghubungi OPD jika ada pertanyaan?
-        </button>
-        <div class="faq-answer">
-          Setelah pengajuan Anda disetujui, informasi kontak OPD akan tersedia di halaman detail pengajuan Anda. Anda dapat menghubungi OPD melalui nomor telepon atau email yang tertera.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          Apakah ada biaya untuk mendaftar?
-        </button>
-        <div class="faq-answer">
-          <strong>Tidak ada biaya</strong> untuk mendaftar dan mengajukan magang melalui POMAS. Seluruh proses pendaftaran adalah gratis.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFAQ(this)">
-          Berapa lama durasi magang yang ideal?
-        </button>
-        <div class="faq-answer">
-          Durasi magang disesuaikan dengan <strong>kebutuhan akademik</strong> Anda. Pastikan periode yang Anda pilih sesuai dengan jadwal dari sekolah/kampus Anda. Umumnya berkisar antara 1-3 bulan.
-        </div>
-      </div>
+      @empty
+      <p style="text-align:center;color:#64748b;">Belum ada FAQ yang tersedia.</p>
+      @endforelse
     </div>
   </section>
 
