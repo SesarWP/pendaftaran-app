@@ -30,6 +30,7 @@
             <a href="#alur" class="nav-link">Alur</a>
             <a href="#persyaratan" class="nav-link">Persyaratan</a>
             <a href="#faq" class="nav-link">FAQ</a>
+            <a href="#lokasi" class="nav-link">Lokasi Kami</a>
         </nav>
 
         <div class="nav-right">
@@ -52,6 +53,7 @@
         <a href="#alur" class="nav-mobile-link" onclick="closeMobileMenu()">Alur Pendaftaran</a>
         <a href="#persyaratan" class="nav-mobile-link" onclick="closeMobileMenu()">Persyaratan</a>
         <a href="#faq" class="nav-mobile-link" onclick="closeMobileMenu()">FAQ</a>
+        <a href="#lokasi" class="nav-mobile-link" onclick="closeMobileMenu()">Lokasi Kami</a>
         <div class="nav-mobile-actions">
             <a href="{{ route('pemohon.login') }}" class="btn-outline">Masuk</a>
             <a href="{{ route('pemohon.register') }}" class="btn-primary">Daftar</a>
@@ -300,7 +302,7 @@ Sragen 57213, Jateng, Indonesia</li>
     </div>
 
     <!-- Map Lokasi -->
-    <div class="footer2-map">
+    <div class="footer2-map" id="lokasi">
         <h4 class="footer2-heading">📍 Lokasi Kami</h4>
         <div class="footer2-map-frame">
             <iframe
