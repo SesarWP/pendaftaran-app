@@ -53,10 +53,10 @@ class AdminStatsOverview extends StatsOverviewWidget
                 ->icon('heroicon-o-flag')
                 ->color('primary'),
 
-            Stat::make('Total OPD', Opd::query()->count())
-                ->description('OPD terdaftar')
-                ->icon('heroicon-o-building-office-2')
-                ->color('warning'),
+            //Stat::make('Total OPD', Opd::query()->count())
+                //->description('OPD terdaftar')
+                //->icon('heroicon-o-building-office-2')
+                //->color('warning'),
         ];
     }
 }

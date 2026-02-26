@@ -89,7 +89,7 @@
                 </li>
                 <li>
                     <span class="step-content">
-                        <strong>Lihat Detail</strong> — Klik ikon <strong>👁 (mata)</strong> pada baris permohonan untuk membuka halaman detail. Di sini, Anda bisa melihat data lengkap pemohon, institusi, periode, bidang, dan file dokumen yang diunggah.
+                        <strong>Lihat Detail</strong> — Klik ikon <span class="guide-badge tip">View</span> pada baris permohonan untuk membuka halaman detail. Di sini, Anda bisa melihat data lengkap pemohon, institusi, periode, bidang, dan file dokumen yang diunggah.
                     </span>
                 </li>
                 <li>

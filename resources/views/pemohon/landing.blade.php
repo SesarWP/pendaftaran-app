@@ -84,106 +84,38 @@
   <h2 class="section-title">Alur Pendaftaran</h2>
   <p class="section-desc">Ikuti langkah berikut agar pengajuan magang Anda diproses.</p>
 
-  <div class="flow-wrap">
+  <div class="stepper">
+    <div class="stepper-track">
+      <div class="stepper-line"></div>
 
-    <!-- Desktop: Timeline SVG horizontal -->
-    <svg class="flow-svg flow-svg-desktop" viewBox="0 0 1000 220" role="img" aria-label="Alur pendaftaran magang">
-      <line x1="90" y1="110" x2="910" y2="110" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round"/>
-
-      <circle cx="90" cy="110" r="28" fill="#FF6600"/>
-      <text x="90" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">1</text>
-
-      <circle cx="295" cy="110" r="28" fill="#FF6600"/>
-      <text x="295" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">2</text>
-
-      <circle cx="500" cy="110" r="28" fill="#FF6600"/>
-      <text x="500" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">3</text>
-
-      <circle cx="705" cy="110" r="28" fill="#FF6600"/>
-      <text x="705" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">4</text>
-
-      <circle cx="910" cy="110" r="28" fill="#FF6600"/>
-      <text x="910" y="118" text-anchor="middle" font-size="18" font-family="Poppins" fill="#FFFFFF" font-weight="700">5</text>
-    </svg>
-
-    <!-- Desktop: Cards -->
-    <div class="flow-grid-desktop">
-      <div class="flow-item">
-        <div class="flow-title">Daftar Akun</div>
-        <div class="flow-text">Pilih tipe Pelajar/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-title">Lengkapi Profil</div>
-        <div class="flow-text">Isi data instansi, jurusan/prodi, nomor induk (NISN/NIM), dan kontak yang dapat dihubungi.</div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-title">Ajukan Magang</div>
-        <div class="flow-text">Pilih OPD tujuan dan tentukan periode magang sesuai jadwal akademik Anda.</div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-title">Upload Berkas</div>
-        <div class="flow-text">Unggah surat pengantar, transkrip/rapor (wajib), serta CV dan proposal (opsional). Maks 4MB per file.</div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-title">Pantau Status</div>
-        <div class="flow-text">Pantau status pengajuan Anda: Diproses, Disetujui, Ditolak, atau Selesai.</div>
-      </div>
-    </div>
-
-    <!-- Mobile: Node sejajar dengan card -->
-    <div class="flow-mobile">
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="dot">1</div>
-          <div class="vline"></div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-title">Daftar Akun</div>
-          <div class="flow-text">Pilih tipe Pelajar/Mahasiswa lalu buat akun dengan email aktif. Pastikan password minimal 8 karakter.</div>
-        </div>
+      <div class="stepper-step">
+        <div class="stepper-dot">1</div>
+        <div class="stepper-label">Daftar Akun</div>
+        <div class="stepper-desc">Pilih tipe Pelajar/Mahasiswa lalu buat akun dengan email aktif.</div>
       </div>
 
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="dot">2</div>
-          <div class="vline"></div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-title">Lengkapi Profil</div>
-          <div class="flow-text">Isi data instansi, jurusan/prodi, nomor induk (NISN/NIM), dan kontak yang dapat dihubungi.</div>
-        </div>
+      <div class="stepper-step">
+        <div class="stepper-dot">2</div>
+        <div class="stepper-label">Lengkapi Profil</div>
+        <div class="stepper-desc">Isi data instansi, jurusan/prodi, nomor induk, dan kontak.</div>
       </div>
 
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="dot">3</div>
-          <div class="vline"></div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-title">Ajukan Magang</div>
-          <div class="flow-text">Pilih OPD tujuan dan tentukan periode magang sesuai jadwal akademik Anda.</div>
-        </div>
+      <div class="stepper-step">
+        <div class="stepper-dot">3</div>
+        <div class="stepper-label">Ajukan Magang</div>
+        <div class="stepper-desc">Tentukan periode magang sesuai jadwal akademik Anda.</div>
       </div>
 
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="dot">4</div>
-          <div class="vline"></div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-title">Upload Berkas</div>
-          <div class="flow-text">Unggah surat pengantar, transkrip/rapor (wajib), serta CV dan proposal (opsional). Maks 4MB per file.</div>
-        </div>
+      <div class="stepper-step">
+        <div class="stepper-dot">4</div>
+        <div class="stepper-label">Upload Berkas</div>
+        <div class="stepper-desc">Unggah surat pengantar, transkrip/rapor, CV, dan proposal.</div>
       </div>
 
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="dot">5</div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-title">Pantau Status</div>
-          <div class="flow-text">Pantau status pengajuan Anda: Diproses, Disetujui, Ditolak, atau Selesai.</div>
-        </div>
+      <div class="stepper-step">
+        <div class="stepper-dot">5</div>
+        <div class="stepper-label">Pantau Status</div>
+        <div class="stepper-desc">Pantau status: Diproses, Disetujui, Ditolak, atau Selesai.</div>
       </div>
     </div>
   </div>
