@@ -20,7 +20,7 @@ enum ApplicationFileType: string
     public function label(): string
     {
         return match ($this) {
-            self::SURAT_PENGANTAR => 'Surat Pengantar Kampus',
+            self::SURAT_PENGANTAR => 'Surat Pengantar Sekolah / Universitas',
             self::PROPOSAL => 'Proposal Magang',
             self::CV => 'CV',
             self::TRANSKRIP_RAPOR => 'Transkrip / Rapor',

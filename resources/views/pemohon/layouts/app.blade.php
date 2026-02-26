@@ -19,7 +19,7 @@
   <!-- TOP NAV -->
   <header class="app-nav">
     <div class="app-nav-inner">
-      <a href="{{ route('pemohon.dashboard') }}" class="app-brand">
+      <a href="{{ route('pemohon.home') }}" class="app-brand">
         <img src="{{ asset('images/pomas.png') }}" alt="Portal Magang Sragen">
       </a>
 

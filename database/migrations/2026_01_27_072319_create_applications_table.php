@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('kategori', ['mahasiswa', 'pelajar']);
 
             // data pemohon (profil pendaftaran, bukan akun)
-            $table->string('institusi'); // kampus/sekolah
+            $table->string('institusi'); // sekolah/universitas
             $table->string('jurusan')->nullable();
             $table->string('telepon')->nullable();
 

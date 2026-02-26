@@ -16,7 +16,6 @@
     {{-- 1. DASHBOARD --}}
     <div class="accordion-item" x-data="{ open: false }">
         <div class="accordion-header" @click="open = !open">
-            <div class="accordion-icon amber">📊</div>
             <div class="accordion-title">
                 <h3>Dashboard</h3>
                 <p>Ringkasan statistik dan grafik permohonan magang</p>
@@ -47,7 +46,6 @@
                 </li>
             </ul>
             <div class="tip-box">
-                <strong>💡 Tips</strong>
                 Dashboard diperbarui secara otomatis setiap kali ada permohonan baru masuk atau status berubah.
             </div>
         </div>
@@ -56,7 +54,6 @@
     {{-- 2. KELOLA PERMOHONAN --}}
     <div class="accordion-item" x-data="{ open: false }">
         <div class="accordion-header" @click="open = !open">
-            <div class="accordion-icon blue">📋</div>
             <div class="accordion-title">
                 <h3>Kelola Permohonan</h3>
                 <p>Melihat, memfilter, menyetujui/menolak permohonan magang</p>
@@ -123,56 +120,15 @@
             </ul>
 
             <div class="tip-box">
-                <strong>💡 Tips</strong>
                 Selalu isi alasan penolakan dengan jelas agar pemohon dapat memperbaiki usulannya. File yang diupload otomatis dinamai sesuai format standar.
             </div>
         </div>
     </div>
 
-    {{-- 3. KELOLA OPD --}}
-    <div class="accordion-item" x-data="{ open: false }">
-        <div class="accordion-header" @click="open = !open">
-            <div class="accordion-icon green">🏛️</div>
-            <div class="accordion-title">
-                <h3>Kelola OPD</h3>
-                <p>Mengelola data Organisasi Perangkat Daerah dan bidang-bidangnya</p>
-            </div>
-            <svg class="accordion-chevron" :class="{ 'open': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-        </div>
-        <div class="accordion-body" x-show="open" x-collapse x-cloak>
-            <ul class="step-list">
-                <li>
-                    <span class="step-content">
-                        <strong>Lihat Daftar OPD</strong> — Klik menu <strong>"OPD"</strong> di sidebar untuk melihat daftar seluruh Organisasi Perangkat Daerah. Setiap OPD menampilkan nama lengkap dan singkatan.
-                    </span>
-                </li>
-                <li>
-                    <span class="step-content">
-                        <strong>Tambah OPD Baru</strong> — Klik tombol <strong>"Buat OPD"</strong> di kanan atas, lalu isi nama OPD, singkatan, dan bidang-bidang yang tersedia.
-                    </span>
-                </li>
-                <li>
-                    <span class="step-content">
-                        <strong>Edit OPD</strong> — Klik Edit pada baris OPD untuk mengubah data. Anda bisa memperbarui nama, singkatan, serta menambah atau menghapus bidang.
-                    </span>
-                </li>
-                <li>
-                    <span class="step-content">
-                        <strong>Hapus OPD</strong> — Klik Delete untuk menghapus OPD. <span class="guide-badge" style="background:#fee2e2;color:#991b1b;">Hati-hati</span> Penghapusan bersifat permanen dan dapat mempengaruhi permohonan yang terkait.
-                    </span>
-                </li>
-            </ul>
-            <div class="tip-box">
-                <strong>💡 Tips</strong>
-                Pastikan setiap OPD memiliki minimal satu bidang agar pemohon dapat memilih bidang tujuan pada saat mengajukan permohonan magang.
-            </div>
-        </div>
-    </div>
 
     {{-- 4. LAPORAN MAGANG --}}
     <div class="accordion-item" x-data="{ open: false }">
         <div class="accordion-header" @click="open = !open">
-            <div class="accordion-icon purple">📈</div>
             <div class="accordion-title">
                 <h3>Laporan Magang</h3>
                 <p>Filter, lihat rekapitulasi, dan unduh data magang dalam format CSV</p>
@@ -208,7 +164,6 @@
                 </li>
             </ul>
             <div class="tip-box">
-                <strong>💡 Tips</strong>
                 Gunakan kombinasi filter untuk mendapatkan data yang lebih spesifik. File CSV menggunakan delimiter titik koma (;) agar kompatibel dengan Excel di Indonesia.
             </div>
         </div>
@@ -217,7 +172,6 @@
     {{-- 5. FAQ --}}
     <div class="accordion-item" x-data="{ open: false }">
         <div class="accordion-header" @click="open = !open">
-            <div class="accordion-icon rose">❓</div>
             <div class="accordion-title">
                 <h3>Pertanyaan Umum (FAQ)</h3>
                 <p>Jawaban untuk pertanyaan yang sering diajukan</p>

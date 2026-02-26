@@ -36,7 +36,7 @@ class FaqSeeder extends Seeder
             ],
             [
                 'question' => 'Berapa lama durasi magang yang ideal?',
-                'answer' => 'Durasi magang disesuaikan dengan <strong>kebutuhan akademik</strong> Anda. Pastikan periode yang Anda pilih sesuai dengan jadwal dari sekolah/kampus Anda. Umumnya berkisar antara 1-3 bulan.',
+                'answer' => 'Durasi magang disesuaikan dengan <strong>kebutuhan akademik</strong> Anda. Pastikan periode yang Anda pilih sesuai dengan jadwal dari sekolah/universitas Anda. Umumnya berkisar antara 1-3 bulan.',
             ],
         ];
 

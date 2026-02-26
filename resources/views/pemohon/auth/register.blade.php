@@ -92,9 +92,9 @@
           <small class="help-text">Pilih Pelajar jika Anda siswa sekolah, atau Mahasiswa jika dari perguruan tinggi</small>
         </div>
 
-        <!-- Nama Sekolah / Kampus -->
+        <!-- Nama Sekolah / Universitas -->
         <div class="row">
-          <label for="instansi_nama">Nama Sekolah / Kampus</label>
+          <label for="instansi_nama">Nama Sekolah / Universitas</label>
           <input
             class="input @error('instansi_nama') input-error @enderror"
             type="text"
@@ -102,7 +102,7 @@
             name="instansi_nama"
             value="{{ old('instansi_nama') }}"
             required>
-          <small class="help-text">Tulis nama lengkap sekolah atau kampus Anda</small>
+          <small class="help-text">Tulis nama lengkap sekolah atau universitas Anda</small>
         </div>
 
         <!-- Jurusan / Prodi & NISN / NIM -->

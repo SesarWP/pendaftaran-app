@@ -28,7 +28,7 @@ class FilesRelationManager extends RelationManager
                         $value = $state instanceof ApplicationFileType ? $state->value : (string) $state;
 
                         return match ($value) {
-                            ApplicationFileType::SURAT_PENGANTAR->value => 'Surat Pengantar Kampus',
+                            ApplicationFileType::SURAT_PENGANTAR->value => 'Surat Pengantar Sekolah / Universitas',
                             ApplicationFileType::PROPOSAL->value => 'Proposal Magang',
                             ApplicationFileType::CV->value => 'CV',
                             ApplicationFileType::TRANSKRIP_RAPOR->value => 'Transkrip / Rapor',

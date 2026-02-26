@@ -73,7 +73,7 @@
           <h3 class="form2-section-title">Informasi Institusi</h3>
 
           <div class="form2-row">
-            <label class="form2-label" for="instansi_nama">Nama Sekolah / Kampus <span class="required">*</span></label>
+            <label class="form2-label" for="instansi_nama">Nama Sekolah / Universitas <span class="required">*</span></label>
             <input
               id="instansi_nama"
               class="form2-input @error('instansi_nama') form2-input-error @enderror"

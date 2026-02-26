@@ -207,7 +207,7 @@
         <h3>Untuk Mahasiswa</h3>
         <ul>
           <li>NIM yang terdaftar dan valid</li>
-          <li>Surat pengantar dari kampus (PDF, maks 4MB)</li>
+          <li>Surat pengantar dari universitas (PDF, maks 4MB)</li>
           <li>Transkrip nilai (PDF/JPG/PNG, maks 4MB)</li>
           <li>CV yang profesional (PDF, opsional)</li>
           <li>Proposal kegiatan (PDF, opsional)</li>
@@ -221,7 +221,7 @@
         <li>Pastikan semua dokumen dalam format yang diminta (PDF untuk surat, PDF/JPG/PNG untuk transkrip)</li>
         <li>Ukuran file tidak melebihi 4MB per dokumen</li>
         <li>Scan dokumen dengan resolusi yang jelas dan mudah dibaca</li>
-        <li>Surat pengantar harus ditandatangani dan dicap oleh pihak sekolah/kampus</li>
+        <li>Surat pengantar harus ditandatangani dan dicap oleh pihak sekolah/universitas</li>
         <li>Periksa kembali semua data sebelum mengunggah</li>
       </ul>
     </div>

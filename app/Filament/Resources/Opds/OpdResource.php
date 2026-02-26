@@ -28,6 +28,11 @@ class OpdResource extends Resource
     protected static ?string $navigationLabel = 'Data OPD';
     protected static ?int $navigationSort = 10;
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
+
 
     public static function form(Schema $schema): Schema
     {

@@ -203,16 +203,9 @@
                     <h3 class="form2-section-title">Informasi OPD & Kategori</h3>
 
                     <div class="form2-row">
-                        <label class="form2-label">OPD Tujuan <span class="required">*</span></label>
-                        <select name="opd_id" class="form2-input" required>
-                            <option value="">-- Pilih OPD --</option>
-                            @foreach($opds as $opd)
-                                <option value="{{ $opd->id }}" @selected(old('opd_id') == $opd->id)>
-                                    {{ $opd->nama }}
-                                </option>
-                            @endforeach
-                        </select>
-                        @error('opd_id') <small class="form2-error">{{ $message }}</small> @enderror
+                        <label class="form2-label">OPD Tujuan</label>
+                        <input type="text" class="form2-input" value="Dinas Komunikasi dan Informatika (DISKOMINFO) Kabupaten Sragen" readonly>
+                        <input type="hidden" name="opd_id" value="{{ $opds->first()->id }}">
                     </div>
 
                     <div class="form2-row">
