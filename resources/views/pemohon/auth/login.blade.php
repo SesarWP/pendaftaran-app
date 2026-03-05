@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/pemohon.css') }}">
+  {!! NoCaptcha::renderJs() !!}
 </head>
 
 <body style="margin:0; padding:0;">
@@ -82,6 +83,13 @@
               <span>Ingat saya</span>
             </label>
             <a href="{{ route('pemohon.password.request') }}" class="auth-forgot">Lupa password?</a>
+          </div>
+
+          <div class="auth-field">
+            {!! NoCaptcha::display() !!}
+            @error('g-recaptcha-response')
+              <span style="color:#dc2626; font-size:12px; margin-top:4px; display:block;">{{ $message }}</span>
+            @enderror
           </div>
 
           <button type="submit" class="auth-btn">Login</button>

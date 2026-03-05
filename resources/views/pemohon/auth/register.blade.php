@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ asset('css/pemohon.css') }}">
+  {!! NoCaptcha::renderJs() !!}
 </head>
 
 <body>
@@ -170,6 +171,14 @@
             <small class="help-text">Ketik ulang password yang sama dengan di atas</small>
             </div>
 
+        </div>
+
+        <!-- Captcha -->
+        <div class="row">
+          {!! NoCaptcha::display() !!}
+          @error('g-recaptcha-response')
+            <span style="color:#dc2626; font-size:12px; margin-top:4px; display:block;">{{ $message }}</span>
+          @enderror
         </div>
 
         <!-- Submit Button -->

@@ -17,6 +17,13 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'g-recaptcha-response' => ['required', 'captcha'],
+        ], [
+            'g-recaptcha-response.required' => 'Silakan centang captcha terlebih dahulu.',
+            'g-recaptcha-response.captcha' => 'Verifikasi captcha gagal, silakan coba lagi.',
+        ]);
+
         $data = $request->validate([
             'name' => ['required','string','max:255'],
             'email' => ['required','email','max:255','unique:users,email'],

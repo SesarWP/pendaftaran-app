@@ -20,6 +20,13 @@ class LoginController extends Controller
     {
         $this->ensureIsNotRateLimited($request);
 
+        $request->validate([
+            'g-recaptcha-response' => ['required', 'captcha'],
+        ], [
+            'g-recaptcha-response.required' => 'Silakan centang captcha terlebih dahulu.',
+            'g-recaptcha-response.captcha' => 'Verifikasi captcha gagal, silakan coba lagi.',
+        ]);
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],

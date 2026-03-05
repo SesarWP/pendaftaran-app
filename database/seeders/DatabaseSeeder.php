@@ -33,6 +33,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             OpdSeeder::class,
+            FaqSeeder::class,
+            RegistrationStepSeeder::class,
+            RegistrationRequirementSeeder::class,
         ]);
     }
 }
