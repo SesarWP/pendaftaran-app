@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Filament\Resources\Faqs;
+namespace App\Filament\Resources\RegistrationRequirements;
 
-use App\Filament\Resources\Faqs\Pages\CreateFaq;
-use App\Filament\Resources\Faqs\Pages\EditFaq;
-use App\Filament\Resources\Faqs\Pages\ListFaqs;
-use App\Models\Faq;
+use App\Filament\Resources\RegistrationRequirements\Pages\CreateRegistrationRequirement;
+use App\Filament\Resources\RegistrationRequirements\Pages\EditRegistrationRequirement;
+use App\Filament\Resources\RegistrationRequirements\Pages\ListRegistrationRequirements;
+use App\Models\RegistrationRequirement;
 use BackedEnum;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -18,31 +19,39 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class FaqResource extends Resource
+class RegistrationRequirementResource extends Resource
 {
-    protected static ?string $model = Faq::class;
+    protected static ?string $model = RegistrationRequirement::class;
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-list';
 
-    protected static ?string $navigationLabel = 'Edit FAQ';
-    protected static ?string $modelLabel = 'Edit FAQ';
-    protected static ?string $pluralModelLabel = 'Edit FAQ';
+    protected static ?string $navigationLabel = 'Edit Persyaratan';
+    protected static ?string $modelLabel = 'Persyaratan';
+    protected static ?string $pluralModelLabel = 'Persyaratan';
     protected static string|\UnitEnum|null $navigationGroup = 'Konten Halaman';
-    protected static ?int $navigationSort = 30;
+    protected static ?int $navigationSort = 20;
 
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
-            Textarea::make('question')
-                ->label('Pertanyaan')
-                ->required()
-                ->rows(2)
-                ->columnSpanFull(),
+            Select::make('category')
+                ->label('Kategori')
+                ->options([
+                    'Pelajar' => 'Pelajar',
+                    'Mahasiswa' => 'Mahasiswa',
+                    'Tips' => 'Tips',
+                ])
+                ->required(),
 
-            Textarea::make('answer')
-                ->label('Jawaban (boleh menggunakan tag HTML)')
+            TextInput::make('title')
+                ->label('Judul')
                 ->required()
-                ->rows(5)
+                ->maxLength(255),
+
+            Textarea::make('content')
+                ->label('Konten (boleh menggunakan tag HTML)')
+                ->required()
+                ->rows(6)
                 ->columnSpanFull(),
 
             TextInput::make('sort_order')
@@ -66,9 +75,13 @@ class FaqResource extends Resource
                     ->sortable()
                     ->width('60px'),
 
-                TextColumn::make('question')
-                    ->label('Pertanyaan')
-                    ->limit(80)
+                TextColumn::make('category')
+                    ->label('Kategori')
+                    ->badge()
+                    ->sortable(),
+
+                TextColumn::make('title')
+                    ->label('Judul')
                     ->searchable()
                     ->wrap(),
 
@@ -92,9 +105,9 @@ class FaqResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListFaqs::route('/'),
-            'create' => CreateFaq::route('/create'),
-            'edit' => EditFaq::route('/{record}/edit'),
+            'index' => ListRegistrationRequirements::route('/'),
+            'create' => CreateRegistrationRequirement::route('/create'),
+            'edit' => EditRegistrationRequirement::route('/{record}/edit'),
         ];
     }
 }

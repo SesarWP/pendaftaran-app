@@ -34,12 +34,18 @@
         </nav>
 
         <div class="nav-right">
+            @auth
+            <a href="{{ route('pemohon.dashboard') }}" class="btn-primary">
+                Dashboard
+            </a>
+            @else
             <a href="{{ route('pemohon.login') }}" class="btn-outline">
                 Masuk
             </a>
             <a href="{{ route('pemohon.register') }}" class="btn-primary">
                 Daftar
             </a>
+            @endauth
         </div>
 
         <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -55,8 +61,12 @@
         <a href="#faq" class="nav-mobile-link" onclick="closeMobileMenu()">FAQ</a>
         <a href="#lokasi" class="nav-mobile-link" onclick="closeMobileMenu()">Lokasi Kami</a>
         <div class="nav-mobile-actions">
+            @auth
+            <a href="{{ route('pemohon.dashboard') }}" class="btn-primary">Dashboard</a>
+            @else
             <a href="{{ route('pemohon.login') }}" class="btn-outline">Masuk</a>
             <a href="{{ route('pemohon.register') }}" class="btn-primary">Daftar</a>
+            @endauth
         </div>
     </div>
 </header>
@@ -73,8 +83,12 @@
         POMAS merupakan platform digital resmi yang berfungsi sebagai sistem informasi terintegrasi untuk memfasilitasi dan mengelola seluruh rangkaian program magang di lingkungan Pemerintah Kabupaten Sragen.
       </p>
       <div class="hero-actions">
+        @auth
+        <a class="btn-primary" href="{{ route('pemohon.dashboard') }}">Ke Dashboard</a>
+        @else
         <a class="btn-primary" href="{{ route('pemohon.register') }}">Daftar Sekarang</a>
         <a class="btn-outline" href="{{ route('pemohon.login') }}">Masuk</a>
+        @endauth
       </div>
     </div>
   </section>
@@ -88,35 +102,15 @@
     <div class="stepper-track">
       <div class="stepper-line"></div>
 
+      @forelse($steps as $step)
       <div class="stepper-step">
-        <div class="stepper-dot">1</div>
-        <div class="stepper-label">Daftar Akun</div>
-        <div class="stepper-desc">Pilih tipe Pelajar/Mahasiswa lalu buat akun dengan email aktif.</div>
+        <div class="stepper-dot">{{ $step->step_number }}</div>
+        <div class="stepper-label">{{ $step->title }}</div>
+        <div class="stepper-desc">{{ $step->description }}</div>
       </div>
-
-      <div class="stepper-step">
-        <div class="stepper-dot">2</div>
-        <div class="stepper-label">Lengkapi Profil</div>
-        <div class="stepper-desc">Isi data instansi, jurusan/prodi, nomor induk, dan kontak.</div>
-      </div>
-
-      <div class="stepper-step">
-        <div class="stepper-dot">3</div>
-        <div class="stepper-label">Ajukan Magang</div>
-        <div class="stepper-desc">Tentukan periode magang sesuai jadwal akademik Anda.</div>
-      </div>
-
-      <div class="stepper-step">
-        <div class="stepper-dot">4</div>
-        <div class="stepper-label">Upload Berkas</div>
-        <div class="stepper-desc">Unggah surat pengantar, transkrip/rapor, CV, dan proposal.</div>
-      </div>
-
-      <div class="stepper-step">
-        <div class="stepper-dot">5</div>
-        <div class="stepper-label">Pantau Status</div>
-        <div class="stepper-desc">Pantau status: Diproses, Disetujui, Ditolak, atau Selesai.</div>
-      </div>
+      @empty
+      <p style="text-align:center;color:#64748b;">Belum ada langkah pendaftaran yang tersedia.</p>
+      @endforelse
     </div>
   </div>
 </section>
@@ -126,39 +120,20 @@
     <h2 class="section-title">Persyaratan Pendaftaran</h2>
 
     <div class="req-grid">
+      @foreach($requirements->whereIn('category', ['Pelajar', 'Mahasiswa']) as $req)
       <div class="req-card">
-        <h3>Untuk Pelajar</h3>
-        <ul>
-          <li>NISN yang terdaftar dan valid</li>
-          <li>Surat pengantar dari sekolah (PDF, maks 4MB)</li>
-          <li>Transkrip nilai/rapor (PDF/JPG/PNG, maks 4MB)</li>
-          <li>CV yang terstruktur (PDF, opsional)</li>
-          <li>Proposal kegiatan (PDF, opsional)</li>
-        </ul>
+        <h3>{{ $req->title }}</h3>
+        {!! $req->content !!}
       </div>
-
-      <div class="req-card">
-        <h3>Untuk Mahasiswa</h3>
-        <ul>
-          <li>NIM yang terdaftar dan valid</li>
-          <li>Surat pengantar dari universitas (PDF, maks 4MB)</li>
-          <li>Transkrip nilai (PDF/JPG/PNG, maks 4MB)</li>
-          <li>CV yang profesional (PDF, opsional)</li>
-          <li>Proposal kegiatan (PDF, opsional)</li>
-        </ul>
-      </div>
+      @endforeach
     </div>
 
+    @foreach($requirements->where('category', 'Tips') as $tip)
     <div class="tips-section" style="margin-top: 24px;">
-      <div class="tips-title">Tips Persiapan Dokumen</div>
-      <ul class="tips-list">
-        <li>Pastikan semua dokumen dalam format yang diminta (PDF untuk surat, PDF/JPG/PNG untuk transkrip)</li>
-        <li>Ukuran file tidak melebihi 4MB per dokumen</li>
-        <li>Scan dokumen dengan resolusi yang jelas dan mudah dibaca</li>
-        <li>Surat pengantar harus ditandatangani dan dicap oleh pihak sekolah/universitas</li>
-        <li>Periksa kembali semua data sebelum mengunggah</li>
-      </ul>
+      <div class="tips-title">{{ $tip->title }}</div>
+      {!! $tip->content !!}
     </div>
+    @endforeach
   </section>
 
   <!-- FAQ SECTION -->

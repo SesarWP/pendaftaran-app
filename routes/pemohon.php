@@ -11,11 +11,15 @@ use App\Http\Controllers\Pemohon\ApplicationFileController;
 use App\Http\Controllers\Pemohon\Auth\ForgotPasswordController;
 use App\Http\Controllers\Pemohon\Auth\ResetPasswordController;
 use App\Models\Faq;
+use App\Models\RegistrationStep;
+use App\Models\RegistrationRequirement;
 
 Route::prefix('pemohon')->name('pemohon.')->group(function () {
     Route::get('/', function () {
         $faqs = Faq::active()->ordered()->get();
-        return view('pemohon.landing', compact('faqs'));
+        $steps = RegistrationStep::active()->ordered()->get();
+        $requirements = RegistrationRequirement::active()->ordered()->get();
+        return view('pemohon.landing', compact('faqs', 'steps', 'requirements'));
     })->name('home');
 
     Route::middleware('guest')->group(function () {
