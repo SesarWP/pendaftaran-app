@@ -176,6 +176,7 @@ php artisan optimize
 Dikembangkan oleh:
 - **Rizky Amalia Nugrahaeni**
 - **Syifa Nur Aini**
+
 Dilanjutkan oleh:
 - **Aisyah Salsa Billa Atiin Vira**
 - **Sesar Wiratmaja Prakosa**
