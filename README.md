@@ -6,6 +6,7 @@ Aplikasi ini ditujukan bagi **pelajar dan mahasiswa** sebagai pemohon magang, se
 
 🌐 **Live URL**: [https://release7.sragenkab.go.id/pemohon](https://release7.sragenkab.go.id/pemohon)
 
+
 ---
 
 ## ✨ Fitur
