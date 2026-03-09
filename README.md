@@ -2,13 +2,13 @@
 
 **Portal Magang Sragen (POMAS)** adalah aplikasi web untuk mengelola **pendaftaran dan pengajuan magang** di lingkungan **Pemerintah Kabupaten Sragen**.
 
-Aplikasi ini ditujukan bagi **siswa SMK dan mahasiswa** sebagai pemohon magang, serta **admin OPD** untuk melakukan verifikasi, persetujuan, dan pengelolaan dokumen magang secara terpusat dan digital.
+Aplikasi ini ditujukan bagi **pelajar dan mahasiswa** sebagai pemohon magang, serta **admin OPD** untuk melakukan verifikasi, persetujuan, dan pengelolaan dokumen magang secara terpusat dan digital.
 
 ---
 
 ## ✨ Fitur
 
-### Pemohon (SMK / Mahasiswa)
+### Pemohon (Pelajar / Mahasiswa)
 - Registrasi & Login (dilengkapi **Google reCAPTCHA**)
 - Lupa Password & Reset Password via Email
 - Manajemen Profil
