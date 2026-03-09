@@ -82,7 +82,7 @@
               <input type="checkbox" name="remember" id="remember">
               <span>Ingat saya</span>
             </label>
-            <a href="{{ route('pemohon.password.request') }}" class="auth-forgot">Lupa password?</a>
+            {{-- <a href="{{ route('pemohon.password.request') }}" class="auth-forgot">Lupa password?</a> --}}
           </div>
 
           <div class="auth-field">
