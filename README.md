@@ -2,13 +2,15 @@
 
 **Portal Magang Sragen (POMAS)** adalah aplikasi web untuk mengelola **pendaftaran dan pengajuan magang** di lingkungan **Pemerintah Kabupaten Sragen**.
 
-Aplikasi ini ditujukan bagi **siswa SMK dan mahasiswa** sebagai pemohon magang, serta **admin OPD** untuk melakukan verifikasi, persetujuan, dan pengelolaan dokumen magang secara terpusat dan digital.
+Aplikasi ini ditujukan bagi **pelajar dan mahasiswa** sebagai pemohon magang, serta **admin OPD** untuk melakukan verifikasi, persetujuan, dan pengelolaan dokumen magang secara terpusat dan digital.
+
+🌐 **Live URL**: [https://release7.sragenkab.go.id/pemohon](https://release7.sragenkab.go.id/pemohon)
 
 ---
 
 ## ✨ Fitur
 
-### Pemohon (SMK / Mahasiswa)
+### Pemohon (Pelajar / Mahasiswa)
 - Registrasi & Login (dilengkapi **Google reCAPTCHA**)
 - Lupa Password & Reset Password via Email
 - Manajemen Profil
@@ -139,9 +141,18 @@ php artisan optimize
 ```
 
 ### Persyaratan Hosting
-- PHP ≥ 8.2
+- PHP ≥ 8.2 (Tested on 8.2.21)
 - MySQL
-- Document root mengarah ke folder `/public`
+- Document root mengarah ke folder `/public` (atau gunakan `.htaccess` redirect di root)
+- Support HTTPS (SSL)
+
+### Catatan Deploy v1.0 (Shared Hosting tanpa SSH)
+Untuk deploy ke server tanpa akses terminal:
+1.  **Database**: Export `.sql` lokal dan import via phpMyAdmin di hosting.
+2.  **File Transfer**: Gunakan FTP (FileZilla) dengan limit 1 koneksi simultan untuk kestabilan.
+3.  **Storage Symlink**: Gunakan script PHP (`symlink.php`) untuk menjalankan perintah `symlink()` jika `php artisan storage:link` tidak bisa dijalankan.
+4.  **Force HTTPS**: Pastikan `APP_URL` menggunakan `https://` dan tambahkan `URL::forceScheme('https')` di `AppServiceProvider.php` untuk menghindari Mixed Content error.
+5.  **Platform Check**: Jika ada error PHP version mismatch di `vendor`, bypass `platform_check.php` di dalam folder `vendor/composer/`.
 
 ---
 
